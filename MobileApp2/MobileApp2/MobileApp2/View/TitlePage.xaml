@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp2.View.TitlePage"
+             BackgroundColor="Lavender">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label HorizontalTextAlignment="Center" TranslationY="70" FontSize="30" TextColor="Black" Text="Title" />
+            <Label HorizontalTextAlignment="Center" TranslationY="80" FontSize="20" TextColor="Black" Text="Rooms" />
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TranslationY="100" FontSize="20" TextColor="White" HeightRequest="40" BackgroundColor="RoyalBlue" Text="Living Room" />
+            <Label HorizontalTextAlignment="Start" TranslationX="50" TranslationY="100" FontSize="20" TextColor="Black" Text="Box 2B" />
+            <Button HorizontalOptions="End" BackgroundColor="Black" TranslationX="-100" TextColor="White" FontSize="20"> 
+            +
+            </Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

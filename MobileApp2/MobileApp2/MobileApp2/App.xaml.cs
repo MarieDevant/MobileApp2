@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileApp2.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,15 @@ namespace MobileApp2
 {
 	public partial class App : Application
 	{
+
 		public App ()
 		{
-			InitializeComponent();
 
-			MainPage = new MobileApp2.MainPage();
+            InitializeComponent();
+
+            
+
+            MainPage = new MobileApp2.View.TitlePage();
 		}
 
 		protected override void OnStart ()

@@ -9,13 +9,17 @@ namespace MobileApp2.Model
 
         private string name;
 
-        private Color color;
+        private ConsoleColor color;
 
         private MoveOut moveOut;
 
+        private Box[] boxes;
+        private int countBox; 
 
 
-        public Room(string n, Color c, MoveOut mo)
+
+
+        public Room(string n, ConsoleColor c, MoveOut mo)
 
         {
 
@@ -24,10 +28,17 @@ namespace MobileApp2.Model
             color = c;
 
             moveOut = mo;
+            mo.addRoom(this);
+            boxes = new Box[10];
+            countBox = 0;
 
         }
 
-
+        public void addBox(Box b)
+        {
+            boxes[countBox] = b;
+            countBox = 0;
+        }
 
         public string Name
         {
@@ -48,7 +59,7 @@ namespace MobileApp2.Model
 
         }
 
-        public Color Color
+        public ConsoleColor Color
         {
 
             get
@@ -84,6 +95,28 @@ namespace MobileApp2.Model
 
             }
 
+        }
+        public Box[] Boxes
+        {
+            get
+            {
+                return boxes;
+            }
+            set
+            {
+                boxes = value;
+            }
+        }
+        public int CountBox
+        {
+            get
+            {
+                return countBox;
+            }
+            set
+            {
+                countBox = value;
+            }
         }
 
     }

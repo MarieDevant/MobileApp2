@@ -28,6 +28,7 @@ namespace MobileApp2.Model
             description = desc;
 
             box = FatherBox;
+            FatherBox.addItem(this);
 
         }
 
@@ -41,6 +42,7 @@ namespace MobileApp2.Model
             description = "none";
 
             box = FatherBox;
+            FatherBox.addItem(this);
 
         }
 

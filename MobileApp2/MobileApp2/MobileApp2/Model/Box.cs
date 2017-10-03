@@ -14,6 +14,9 @@ namespace MobileApp2.Model
 
         private Room room;
 
+        private Item[] items;
+        private int countItems;
+
 
 
         public Box(string n, string pathImage, string pathQRCode, Room roomFather)
@@ -25,8 +28,11 @@ namespace MobileApp2.Model
             image = pathImage;
 
             qrcode = pathQRCode;
+            items = new Item[10];
+            countItems = 0;
 
             room = roomFather;
+            room.addBox(this);
 
         }
 
@@ -39,11 +45,19 @@ namespace MobileApp2.Model
 
             qrcode = "none";
 
+            items = new Item[10];
+            countItems = 0;
             room = roomFather;
+            room.addBox(this);
+
 
         }
 
-
+        public void addItem(Item i)
+        {
+            items[countItems] = i;
+            countItems++;
+        }
 
         public string Name
         {
@@ -126,6 +140,29 @@ namespace MobileApp2.Model
 
             }
 
+        }
+
+        public Item[] Items
+        {
+            get
+            {
+                return items;
+            }
+            set
+            {
+                items = value;
+            }
+        }
+        public int CountItems
+        {
+            get
+            {
+                return countItems;
+            }
+            set
+            {
+                countItems = value;
+            }
         }
 
     }

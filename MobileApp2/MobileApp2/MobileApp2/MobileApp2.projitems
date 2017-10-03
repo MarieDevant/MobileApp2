@@ -17,9 +17,14 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\Box.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Load.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MoveOut.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Room.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\TitlePage.xaml.cs">
+      <DependentUpon>TitlePage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
@@ -33,6 +38,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ModelView\" />
-    <Folder Include="$(MSBuildThisFileDirectory)View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\TitlePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -11,6 +11,8 @@ namespace MobileApp2.Model
 
         private User user;
 
+        private Room[] rooms;
+        private int countRooms;
 
 
         public MoveOut(string n, User usr)
@@ -20,9 +22,15 @@ namespace MobileApp2.Model
             name = n;
 
             user = usr;
-
+            countRooms = 0;
+            rooms = new Room[10];
         }
 
+        public void addRoom(Room r)
+        {
+            rooms[countRooms] = r;
+            countRooms++;
+        }
 
 
         public string Name
@@ -61,6 +69,28 @@ namespace MobileApp2.Model
 
             }
 
+        }
+        public int CountRooms
+        {
+            get
+            {
+                return countRooms;
+            }
+            set
+            {
+                countRooms = value;
+            }
+        }
+        public Room[] Rooms
+        {
+            get
+            {
+                return rooms;
+            }
+            set
+            {
+                rooms = value;
+            }
         }
 
     }
