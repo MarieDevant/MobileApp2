@@ -39,16 +39,20 @@ namespace MobileApp2.View
             rooms[1] = r2;
             rooms[2] = r3;
             
-=======
-
             Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
-            StackLayout grid = AddHeader();
-            for (int i = 0; i < lo.MoveOut.CountRooms; i++)
+            var layout = new StackLayout { Padding = new Thickness(5, 10) };
+            this.Content = layout;
+            int x = 0;
+            while (x != 3)
             {
-                grid.Children.Add(AddRoom(rooms[i]));
+                var label = new Label { Text = "This is a label.", TextColor = Color.FromHex("#77d065"), FontSize = 20 };
+                layout.Children.Add(label);
+                x++;
             }
+
+
         }
 
         private static StackLayout AddRoom(Room r)
