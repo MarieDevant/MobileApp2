@@ -12,6 +12,8 @@ namespace MobileApp2.Model
 
         private string qrcode;
 
+        private string description;
+
         private Room room;
 
         private Item[] items;
@@ -19,14 +21,14 @@ namespace MobileApp2.Model
 
 
 
-        public Box(string n, string pathImage, string pathQRCode, Room roomFather)
+        public Box(string n, string pathImage, string descr, string pathQRCode, Room roomFather)
 
         {
 
             name = n;
 
             image = pathImage;
-
+            description = descr;
             qrcode = pathQRCode;
             items = new Item[10];
             countItems = 0;
@@ -44,7 +46,7 @@ namespace MobileApp2.Model
             image = "none";
 
             qrcode = "none";
-
+            description = "none";
             items = new Item[10];
             countItems = 0;
             room = roomFather;
@@ -162,6 +164,17 @@ namespace MobileApp2.Model
             set
             {
                 countItems = value;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
             }
         }
 

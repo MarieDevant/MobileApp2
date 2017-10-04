@@ -11,6 +11,7 @@ namespace MobileApp2
 	public partial class App : Application
 	{
 
+
 		public App ()
 		{
 

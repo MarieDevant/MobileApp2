@@ -39,16 +39,16 @@ namespace MobileApp2.View
             rooms[0] = r1;
             rooms[1] = r2;
             rooms[2] = r3;
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 80e70efc24bc43fa025a3701413edbbe3f113745
             Load lo = new Load(me, vacance, rooms);
-            
-            StackLayout grid = new StackLayout {
-                Children =
-                {
-                   
-                }
-            };
-            for(int i = 0; i< lo.MoveOut.CountRooms; i++)
+
+            InitializeComponent();
+            StackLayout grid = AddHeader();
+            for (int i = 0; i < lo.MoveOut.CountRooms; i++)
             {
                 grid.Children.Add(AddRoom(rooms[i]));
             }
@@ -56,7 +56,8 @@ namespace MobileApp2.View
 
         private static StackLayout AddRoom(Room r)
         {
-            Label room = new Label {
+            Label room = new Label
+            {
                 Text = r.Name,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
@@ -68,6 +69,7 @@ namespace MobileApp2.View
             };
             StackLayout grid = new StackLayout
             {
+                Margin=10,
                 Children =
                 {
                     room
@@ -79,23 +81,72 @@ namespace MobileApp2.View
                 grid.Children.Add(AddBox(r.Boxes[j]));
             }
             return grid;
-            }
+        }
 
-        private static Label AddBox(Box b)
+        private static StackLayout AddBox(Box b)
         {
+
             Label box = new Label
             {
                 Text = b.Name,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                TranslationY = 100,
                 TranslationX = 50,
                 FontSize = 20,
                 TextColor = Color.Black,
                 HeightRequest = 40,
                 BackgroundColor = Color.Lavender,
             };
-            return box;
+            Button plus = new Button
+            {
+                Text = "+",
+                HorizontalOptions = LayoutOptions.End,
+                VerticalOptions = LayoutOptions.Center,
+                BackgroundColor = Color.Black,
+                TextColor = Color.White,
+                FontSize = 20,
+                HeightRequest = 30
+
+            };
+            StackLayout lign = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                Children =
+                {
+                    box,
+                    plus
+                }
+            };
+            return lign;
         }
+
+        private static StackLayout AddHeader()
+        {
+            Label header = new Label
+            {
+                Text = "Title",
+                HorizontalOptions = LayoutOptions.Center,
+                TranslationY = 70,
+                FontSize = 30,
+                TextColor = Color.Black,
+            };
+            Label subTitle = new Label
+            {
+                Text = "Rooms",
+                HorizontalOptions = LayoutOptions.Center,
+                TranslationY = 80,
+                FontSize = 20,
+                TextColor = Color.Black,
+            };
+            StackLayout grid = new StackLayout
+            {
+                Children =
+                {
+                    header,
+                    subTitle
+                }
+            };
+            return grid;
         }
     }
+}
