@@ -36,9 +36,9 @@ namespace MobileApp2.View
             Item it311 = new Item("Bike", b31);
 
             Room[] rooms = new Room[3];
-            rooms[1] = r1;
-            rooms[2] = r2;
-            rooms[3] = r3;
+            rooms[0] = r1;
+            rooms[1] = r2;
+            rooms[2] = r3;
             
             Load lo = new Load(me, vacance, rooms);
             
