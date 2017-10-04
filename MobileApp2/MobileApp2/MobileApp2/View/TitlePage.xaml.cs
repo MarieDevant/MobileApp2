@@ -15,7 +15,6 @@ namespace MobileApp2.View
     {
         public TitlePage()
         {
-
             // Initialize a fake database
             User me = new User("me", "pwd");
             MoveOut vacance = new MoveOut("vacances", me);
@@ -39,11 +38,9 @@ namespace MobileApp2.View
             rooms[0] = r1;
             rooms[1] = r2;
             rooms[2] = r3;
-<<<<<<< HEAD
             
 =======
 
->>>>>>> 80e70efc24bc43fa025a3701413edbbe3f113745
             Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
