@@ -37,7 +37,7 @@ namespace MobileApp2.Model
         public void addBox(Box b)
         {
             boxes[countBox] = b;
-            countBox = 0;
+            countBox ++;
         }
 
         public string Name

@@ -38,13 +38,11 @@ namespace MobileApp2.View
             rooms[0] = r1;
             rooms[1] = r2;
             rooms[2] = r3;
-            
-=======
-
             Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
             StackLayout grid = AddHeader();
+            this.Content = grid;
             for (int i = 0; i < lo.MoveOut.CountRooms; i++)
             {
                 grid.Children.Add(AddRoom(rooms[i]));
@@ -62,6 +60,7 @@ namespace MobileApp2.View
                 FontSize = 20,
                 TextColor = Color.White,
                 HeightRequest = 40,
+                WidthRequest = 300,
                 BackgroundColor = Color.RoyalBlue,
             };
             StackLayout grid = new StackLayout
@@ -88,10 +87,12 @@ namespace MobileApp2.View
                 Text = b.Name,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
+                TranslationY =100,
                 TranslationX = 50,
                 FontSize = 20,
                 TextColor = Color.Black,
                 HeightRequest = 40,
+                WidthRequest = 300,
                 BackgroundColor = Color.Lavender,
             };
             Button plus = new Button
@@ -99,10 +100,11 @@ namespace MobileApp2.View
                 Text = "+",
                 HorizontalOptions = LayoutOptions.End,
                 VerticalOptions = LayoutOptions.Center,
-                BackgroundColor = Color.Black,
-                TextColor = Color.White,
+				TranslationY = 100,
+                BackgroundColor =Color.Lavender,
+                TextColor = Color.Black,
                 FontSize = 20,
-                HeightRequest = 30
+                HeightRequest = 40
 
             };
             StackLayout lign = new StackLayout
