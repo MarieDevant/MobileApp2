@@ -16,8 +16,18 @@ namespace MobileApp2.View
         private Box b;
 		public DetailBox ()
 		{
+			//Fake database
+			User me = new User("me", "pwd");
+			MoveOut vacance = new MoveOut("vacances", me);
+			Room r1 = new Room("Living Room", ConsoleColor.Red, vacance);
+			Box b11 = new Box("B1LR", r1);
+			Item it111 = new Item("Lamp", b11);
+			Item it112 = new Item("Pillow", b11);
+
+            b = b11;
 			InitializeComponent ();
-            AddHeader();
+            this.Content = AddHeader();
+
 		}
         public StackLayout AddHeader()
         {
@@ -26,44 +36,113 @@ namespace MobileApp2.View
                 Text = b.Name,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                TranslationY = 70,
                 FontSize = 30,
+                VerticalTextAlignment = TextAlignment.Start,
+                HeightRequest = 70,
                 TextColor = Color.Black
             };
-            Image im = new Image
+            /*Image im = new Image
             {
                 Source = b.Image,
                 WidthRequest = 500,
 
-            };
-            Label desc = new Label
+            };*/
+
+            Label titleDesc = new Label
             {
-                Text = "Description" + b.Description,
+                Text = "Description : ",
                 HorizontalOptions = LayoutOptions.Start,
-                VerticalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Start,
                 FontSize = 15,
+                WidthRequest = 100,
                 TextColor = Color.Black
             };
+			Label contentDesc = new Label
+			{
+                Text = b.Description,
+				HorizontalOptions = LayoutOptions.Start,
+				VerticalOptions = LayoutOptions.Start,
+                HorizontalTextAlignment = TextAlignment.Start,
+				FontSize = 15,
+				TextColor = Color.Black
+			};
+
+			StackLayout desc = new StackLayout
+			{
+				Orientation = StackOrientation.Horizontal,
+				Children =
+				{
+                    titleDesc,
+					contentDesc
+				}
+			};
+
             Label content = new Label
             {
-                Text = "Content",
+                Text = "Content :",
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Center,
                 FontSize = 15,
                 TextColor = Color.Black
             };
+            StackLayout items = new StackLayout { };
+            for (int i = 0; i < b.CountItems;i++){
+                items.Children.Add(AddItem(b.Items[i]));
+            }
             StackLayout grid = new StackLayout
             {
+                TranslationY = 70,
+                Spacing = 10,
+                Padding = new Thickness(30,0),
                 Children =
                 {
                     title,
-                    im,
+                    //im,
                     desc,
-                    content
+                    content,
+                    items
                 }
             };
             return grid;
         }
+		private static StackLayout AddItem(Item i)
+		{
+
+			Label item = new Label
+			{
+				Text = i.Name,
+				HorizontalOptions = LayoutOptions.Center,
+				FontSize = 15,
+				TextColor = Color.Black,
+				HorizontalTextAlignment = TextAlignment.Start,
+				VerticalTextAlignment = TextAlignment.Center,
+				WidthRequest = 250,
+				BackgroundColor = Color.Lavender,
+			};
+			Label image = new Label
+			{
+				Text = "Picture",
+				HorizontalOptions = LayoutOptions.End,
+				BackgroundColor = Color.Lavender,
+				HorizontalTextAlignment = TextAlignment.Start,
+				VerticalTextAlignment = TextAlignment.Center,
+				TextColor = Color.Black,
+				FontSize = 15,
+
+			};
+			StackLayout lign = new StackLayout
+			{
+				Orientation = StackOrientation.Horizontal,
+				TranslationX = 20,
+				VerticalOptions = LayoutOptions.Center,
+				Children =
+				{
+					item,
+					image
+				}
+			};
+			return lign;
+		}
 
 	}
 }

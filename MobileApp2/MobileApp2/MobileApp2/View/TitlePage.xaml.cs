@@ -74,16 +74,18 @@ namespace MobileApp2.View
                 Text = r.Name,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                TranslationY = 100,
                 FontSize = 20,
                 TextColor = Color.White,
+                HorizontalTextAlignment= TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center,
                 HeightRequest = 40,
-                WidthRequest = 300,
+                WidthRequest = 400,
                 BackgroundColor = Color.RoyalBlue,
             };
             StackLayout grid = new StackLayout
             {
-                Margin=10,
+                Margin=new Thickness(0,10),
+                TranslationY = 20,
                 Children =
                 {
                     room
@@ -104,12 +106,10 @@ namespace MobileApp2.View
             {
                 Text = b.Name,
                 HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                TranslationY =100,
-                TranslationX = 50,
                 FontSize = 20,
                 TextColor = Color.Black,
-                HeightRequest = 40,
+                HorizontalTextAlignment = TextAlignment.Start,
+				VerticalTextAlignment = TextAlignment.Center,
                 WidthRequest = 300,
                 BackgroundColor = Color.Lavender,
             };
@@ -117,17 +117,17 @@ namespace MobileApp2.View
             {
                 Text = "+",
                 HorizontalOptions = LayoutOptions.End,
-                VerticalOptions = LayoutOptions.Center,
-				TranslationY = 100,
                 BackgroundColor =Color.Lavender,
                 TextColor = Color.Black,
                 FontSize = 20,
-                HeightRequest = 40
 
             };
             StackLayout lign = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
+                TranslationX=20,
+                HeightRequest =40,
+                VerticalOptions = LayoutOptions.Center,
                 Children =
                 {
                     box,
@@ -143,7 +143,6 @@ namespace MobileApp2.View
             {
                 Text = "Title",
                 HorizontalOptions = LayoutOptions.Center,
-                TranslationY = 70,
                 FontSize = 30,
                 TextColor = Color.Black,
             };
@@ -151,12 +150,13 @@ namespace MobileApp2.View
             {
                 Text = "Rooms",
                 HorizontalOptions = LayoutOptions.Center,
-                TranslationY = 80,
                 FontSize = 20,
                 TextColor = Color.Black,
             };
             StackLayout grid = new StackLayout
             {
+                TranslationY = 70,
+                Padding = 40,
                 Children =
                 {
                     header,
