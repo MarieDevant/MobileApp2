@@ -43,13 +43,16 @@ namespace MobileApp2.View
             Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
-            StackLayout grid = AddHeader();
-            this.Content = grid;
-            for (int i = 0; i < lo.MoveOut.CountRooms; i++){
-                grid.Children.Add(AddRoom(rooms[i]));
-            }
 
             
+           // StackLayout grid = AddHeader();
+            //this.Content = grid;
+            //for (int i = 0; i < lo.MoveOut.CountRooms; i++){
+             //   grid.Children.Add(AddRoom(rooms[i]));
+           // }
+            
+
+
             /*Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();

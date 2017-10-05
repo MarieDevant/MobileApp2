@@ -4,10 +4,22 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
    x:Class="MobileApp2.View.TitlePage"
     Title="Label Demo"
     BackgroundColor="Cyan">
-    
-    <ContentPage.Content>
-        <StackLayout Padding="5,10">
-
-        </StackLayout>
-    </ContentPage.Content>
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"    
+        android:rowCount="2"
+        android:columnCount="2">
+        <TextView
+            android:text="Cell 0"
+            android:textSize="14dip" />
+        <TextView
+            android:text="Cell 1"
+            android:textSize="14dip" />
+        <TextView
+            android:text="Cell 2"
+            android:textSize="14dip" />
+        <TextView
+            android:text="Cell 3"
+            android:textSize="14dip" />
+    </GridLayout>
 </ContentPage>
