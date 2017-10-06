@@ -42,15 +42,15 @@ namespace MobileApp2.View
 
             Load lo = new Load(me, vacance, rooms);
 
-            InitializeComponent();
-            StackLayout grid = AddHeader();
-            this.Content = grid;
-            for (int i = 0; i < lo.MoveOut.CountRooms; i++){
-                grid.Children.Add(AddRoom(rooms[i]));
-            }
+            //InitializeComponent();
+            //StackLayout grid = AddHeader();
+            //StackLayout overalllayout = AddMenu(grid);
+            //this.Content = grid;
+            //for (int i = 0; i < lo.MoveOut.CountRooms; i++){
+            //    grid.Children.Add(AddRoom(rooms[i]));
+            //}
 
             
-            /*Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
             var layout = new StackLayout { Padding = new Thickness(5, 10) };
@@ -62,8 +62,8 @@ namespace MobileApp2.View
                 var label = new Label { Text = "This is a label.", TextColor = Color.FromHex("#77d065"), FontSize = 20 };
                 layout.Children.Add(label);
                 x++;
-            }*/
-
+            }
+            
 
         }
 
@@ -164,6 +164,33 @@ namespace MobileApp2.View
                 }
             };
             return grid;
+        }
+
+        //  creating an overarching menu and set the  grid as the child
+        private static StackLayout AddMenu(StackLayout grid)
+        {
+            Label menu = new Label
+            {
+                Text = "Menu",
+                HorizontalOptions = LayoutOptions.Center,
+                FontSize = 30,
+                TextColor = Color.Black,
+            };
+
+            StackLayout overalllayout = new StackLayout
+            {
+                TranslationY = 70,
+                Padding = 0,
+                Children =
+                {
+                    menu,
+                    grid
+                }
+            };
+            return overalllayout;
+
+
+
         }
     }
 }
