@@ -34,10 +34,11 @@ namespace MobileApp2.View
             Box b31 = new Box("B1G", r3);
             Item it311 = new Item("Bike", b31);
 
-            Room[] rooms = new Room[3];
-            rooms[0] = r1;
-            rooms[1] = r2;
-            rooms[2] = r3;
+
+            List<Room> rooms = new List<Room>();
+            rooms.Add( r1);
+            rooms.Add(r2);
+            rooms.Add(r3);
 
 
             Load lo = new Load(me, vacance, rooms);
@@ -45,7 +46,7 @@ namespace MobileApp2.View
             InitializeComponent();
             StackLayout grid = AddHeader();
             this.Content = grid;
-            for (int i = 0; i < lo.MoveOut.CountRooms; i++){
+            for (int i = 0; i < lo.MoveOut.Rooms.Count; i++){
                 grid.Children.Add(AddRoom(rooms[i]));
             }
 
@@ -92,7 +93,7 @@ namespace MobileApp2.View
                 }
             };
 
-            for (int j = 0; j < r.CountBox; j++)
+            for (int j = 0; j < r.Boxes.Count; j++)
             {
                 grid.Children.Add(AddBox(r.Boxes[j]));
             }

@@ -86,7 +86,7 @@ namespace MobileApp2.View
                 TextColor = Color.Black
             };
             StackLayout items = new StackLayout { };
-            for (int i = 0; i < b.CountItems;i++){
+            for (int i = 0; i < b.Items.Count;i++){
                 items.Children.Add(AddItem(b.Items[i]));
             }
             StackLayout grid = new StackLayout

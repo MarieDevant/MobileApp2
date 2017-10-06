@@ -16,8 +16,7 @@ namespace MobileApp2.Model
 
         private Room room;
 
-        private Item[] items;
-        private int countItems;
+        private List<Item> items;
 
 
 
@@ -30,9 +29,7 @@ namespace MobileApp2.Model
             image = pathImage;
             description = descr;
             qrcode = pathQRCode;
-            items = new Item[10];
-            countItems = 0;
-
+            items = new List<Item>();
             room = roomFather;
             room.addBox(this);
 
@@ -47,8 +44,7 @@ namespace MobileApp2.Model
 
             qrcode = "none";
             description = "none";
-            items = new Item[10];
-            countItems = 0;
+            items = new List<Item>();
             room = roomFather;
             room.addBox(this);
 
@@ -57,8 +53,7 @@ namespace MobileApp2.Model
 
         public void addItem(Item i)
         {
-            items[countItems] = i;
-            countItems++;
+            items.Add(i);
         }
 
         public string Name
@@ -144,7 +139,7 @@ namespace MobileApp2.Model
 
         }
 
-        public Item[] Items
+        public List<Item> Items
         {
             get
             {
@@ -153,17 +148,6 @@ namespace MobileApp2.Model
             set
             {
                 items = value;
-            }
-        }
-        public int CountItems
-        {
-            get
-            {
-                return countItems;
-            }
-            set
-            {
-                countItems = value;
             }
         }
         public string Description

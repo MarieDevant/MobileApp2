@@ -13,8 +13,7 @@ namespace MobileApp2.Model
 
         private MoveOut moveOut;
 
-        private Box[] boxes;
-        private int countBox; 
+        private List<Box> boxes;
 
 
 
@@ -29,15 +28,13 @@ namespace MobileApp2.Model
 
             moveOut = mo;
             mo.addRoom(this);
-            boxes = new Box[10];
-            countBox = 0;
+            boxes = new List<Box>();
 
         }
 
         public void addBox(Box b)
         {
-            boxes[countBox] = b;
-            countBox ++;
+            boxes.Add(b);
         }
 
         public string Name
@@ -96,7 +93,7 @@ namespace MobileApp2.Model
             }
 
         }
-        public Box[] Boxes
+        public List<Box> Boxes
         {
             get
             {
@@ -105,17 +102,6 @@ namespace MobileApp2.Model
             set
             {
                 boxes = value;
-            }
-        }
-        public int CountBox
-        {
-            get
-            {
-                return countBox;
-            }
-            set
-            {
-                countBox = value;
             }
         }
 
