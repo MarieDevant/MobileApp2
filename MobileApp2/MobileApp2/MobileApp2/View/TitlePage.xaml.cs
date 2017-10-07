@@ -39,7 +39,7 @@ namespace MobileApp2.View
             rooms[1] = r2;
             rooms[2] = r3;
 
-
+            
             Load lo = new Load(me, vacance, rooms);
 
             //InitializeComponent();
