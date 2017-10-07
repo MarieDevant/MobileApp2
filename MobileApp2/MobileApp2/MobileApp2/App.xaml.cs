@@ -1,11 +1,14 @@
 ﻿using MobileApp2.Model;
+using MobileApp2.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MobileApp2
 {
 	public partial class App : Application
@@ -16,10 +19,12 @@ namespace MobileApp2
 		{
 
             InitializeComponent();
-
-            
-
-            MainPage = new MobileApp2.View.TitlePage();
+            this.MainPage = new NavigationPage(new MainPageTest())
+            {
+                BarBackgroundColor = Color.DarkBlue,
+                BarTextColor = Color.White,
+            };
+         
 		}
 
 		protected override void OnStart ()

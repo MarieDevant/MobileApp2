@@ -142,7 +142,7 @@ namespace MobileApp2.View
         {
             Label header = new Label
             {
-                Text = "Title",
+                Text = "Create your Move",
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = 30,
                 TextColor = Color.Black,
