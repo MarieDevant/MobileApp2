@@ -13,6 +13,7 @@ namespace MobileApp2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TitlePage : ContentPage
     {
+        private bool MainMenuOn = false;
         public TitlePage()
         {
             // Initialize a fake database
@@ -44,12 +45,13 @@ namespace MobileApp2.View
             Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
+            /*
             StackLayout grid = AddHeader();
             this.Content = grid;
             for (int i = 0; i < lo.MoveOut.Rooms.Count; i++){
                 grid.Children.Add(AddRoom(rooms[i]));
             }
-
+            */
             
             /*Load lo = new Load(me, vacance, rooms);
 
@@ -67,6 +69,20 @@ namespace MobileApp2.View
 
 
         }
+
+        // when the main menu button is clicked this action will play
+        private void MenuClicked(object sender, EventArgs e)
+        {
+            // check if the menu is on
+            if (MainMenuOn)
+            {
+                Border.IsVisible = false;
+            } else
+            {
+                Border.IsVisible = true;
+            }
+        }
+
 
         private static StackLayout AddRoom(Room r)
         {

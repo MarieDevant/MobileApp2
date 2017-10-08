@@ -6,9 +6,79 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     BackgroundColor="Lavender">
     
     <ContentPage.Content>
-        <Label Text="Welcome to Move"
-               VerticalOptions="Center"
-               HorizontalOptions="Center"
-        />
+        <ScrollView>
+            <AbsoluteLayout>
+                
+                <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0,0,1000,50"
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
+                <Button Text="Menu"
+                AbsoluteLayout.LayoutBounds="0,1,70,50"
+                       Clicked="MenuClicked" />
+
+                <BoxView Color="Red" AbsoluteLayout.LayoutBounds="0,50,180,500"
+                         IsVisible="False" x:Name="Border"/>
+
+                <Button Text="Home"
+                AbsoluteLayout.LayoutBounds="110,55,50,50"
+                       Clicked="MenuClicked" />
+                
+                <Button Text="Create a Room"
+                AbsoluteLayout.LayoutBounds="0,105,150,30"
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+                <Button Text="Create a Box"
+                AbsoluteLayout.LayoutBounds="0,155,150,50"
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"                        
+                       Clicked="MenuClicked" />
+                <Button Text="Create a Item"
+                AbsoluteLayout.LayoutBounds="0,205,150,50"
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"                        
+                       Clicked="MenuClicked" />
+
+                <Button Text="Move Box/Item"
+                AbsoluteLayout.LayoutBounds="0,255,150,50"
+                       Clicked="MenuClicked" />
+                <Button Text="Search Box"
+                AbsoluteLayout.LayoutBounds="0,305,150,50"
+                       Clicked="MenuClicked" />
+                <Button Text="QR Scanner"
+                AbsoluteLayout.LayoutBounds="0,355,150,50"
+                       Clicked="MenuClicked" />
+                <Button Text="Remove Box/Item"
+                AbsoluteLayout.LayoutBounds="0,405,150,50"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Share Boxes"
+                AbsoluteLayout.LayoutBounds="0,455,150,50"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Find Others Boxes"
+                AbsoluteLayout.LayoutBounds="0,505,150,50"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Settings"
+                AbsoluteLayout.LayoutBounds="0,555,150,50"
+                       Clicked="MenuClicked" />
+
+                <Button Text="About"
+                AbsoluteLayout.LayoutBounds="0,605,150,50"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Close Application"
+                AbsoluteLayout.LayoutBounds="0,405,150,50"
+                       Clicked="MenuClicked" />
+
+
+            </AbsoluteLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
