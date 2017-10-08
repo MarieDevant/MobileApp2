@@ -10,9 +10,9 @@ namespace MobileApp2.View
         public MoveObject()
         {
             InitializeComponent();
-			StackLayout grid = AddHeader();
-			this.Content = grid;
-			grid.Children.Add(AddContent());
+			//StackLayout grid = AddHeader();
+			//this.Content = grid;
+			//grid.Children.Add(AddContent());
 
 		}
 		public StackLayout AddHeader()

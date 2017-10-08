@@ -4,5 +4,48 @@
     x:Class="MobileApp2.View.MoveObject"
     BackgroundColor = "Lavender">
 	<ContentPage.Content>
+        <StackLayout TranslationY ="70"
+            Padding ="30,0">
+            <Label Text = "Move Object"
+                HorizontalOptions="Center"
+                VerticalOptions = "Center"
+                FontSize = "30"
+                VerticalTextAlignment = "Start"
+                HeightRequest = "70"
+                TextColor = "Black"/>
+            <StackLayout Orientation ="Horizontal"
+                HorizontalOptions ="Center"
+                WidthRequest = "200">
+                <Label Text = "Item"
+                    HorizontalOptions = "StartAndExpand"
+                    FontSize ="20"
+                    TextColor = "Black"/>
+                <Switch HorizontalOptions="CenterAndExpand"/>
+                <Label Text = "Box"
+                    HorizontalOptions = "EndAndExpand" 
+                    FontSize ="20"
+                    TextColor = "Black"/>
+            </StackLayout>
+            <Entry
+                Text = "Box name"
+                HorizontalOptions = "Start"
+                VerticalOptions = "Center"
+                FontSize = "20"
+                WidthRequest = "200"
+                TextColor = "Black"/>
+            <Entry
+                Text = "Destination"
+                HorizontalOptions = "Start"
+                VerticalOptions = "Center"
+                FontSize = "20"
+                WidthRequest = "200"
+                TextColor = "Black"/>
+            <Button
+                Text = "Move"
+                TranslationY = "50"
+                VerticalOptions = "End"
+                BackgroundColor = "RoyalBlue"
+                TextColor = "White"/>
+        </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
