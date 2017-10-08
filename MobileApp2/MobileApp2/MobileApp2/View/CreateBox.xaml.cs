@@ -44,6 +44,11 @@ namespace MobileApp2.View
                 Text = "Box Name",
                 TextColor = Color.Black
             };
+			Entry desc = new Entry
+			{
+				Text = "Description",
+				TextColor = Color.Black
+			};
             Label optionalImage = new Label
             {
                 
@@ -104,7 +109,7 @@ namespace MobileApp2.View
 				TextColor = Color.Black,
 				HorizontalTextAlignment = TextAlignment.Start,
                 WidthRequest = 250,
-				Text = "Box Name"
+                Text = "Add an Item (Optional) "
 			};
             Button addItem = new Button
             {
@@ -138,6 +143,7 @@ namespace MobileApp2.View
                 Spacing = 20,
                 Children = {
                     name,
+                    desc,
                     imageLayout,
                     qrcodeLayout,
                     addItemLayout,
