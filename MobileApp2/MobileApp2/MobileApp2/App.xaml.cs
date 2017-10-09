@@ -19,7 +19,7 @@ namespace MobileApp2
 		{
 
             InitializeComponent();
-            this.MainPage = new NavigationPage(new MainPageTest());
+            this.MainPage = new NavigationPage(new TitlePage());
 
          
 		}

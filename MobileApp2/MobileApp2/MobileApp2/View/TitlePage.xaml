@@ -123,7 +123,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"
-                       Clicked="MenuClicked" />
+                       Clicked="btnSetting_Clicked" />
 
                 <Button Text="About"
                 AbsoluteLayout.LayoutBounds="0,360,150,35"

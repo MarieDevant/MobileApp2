@@ -51,6 +51,10 @@ namespace MobileApp2.View
         {
             Navigation.PushAsync(new SearchResult());
         }
+        private void btnSetting_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SearchResult());
+        }
 
 
 
