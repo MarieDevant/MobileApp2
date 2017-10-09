@@ -88,6 +88,7 @@ namespace MobileApp2.View
 
             Load lo = new Load(me, vacance, rooms);
             InitializeComponent();
+	    myListView.ItemsSource = source;
 
             Label header = new Label
             {
