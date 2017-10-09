@@ -19,11 +19,8 @@ namespace MobileApp2
 		{
 
             InitializeComponent();
-            this.MainPage = new NavigationPage(new MainPageTest())
-            {
-                BarBackgroundColor = Color.DarkBlue,
-                BarTextColor = Color.White,
-            };
+            this.MainPage = new NavigationPage(new MainPageTest());
+
          
 		}
 

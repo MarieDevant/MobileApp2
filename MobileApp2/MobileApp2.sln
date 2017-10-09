@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MobileApp2", "MobileApp2\MobileApp2\MobileApp2.shproj", "{A7CD77A2-7CBB-46D6-AC5A-1BCA6B3A12E8}"
 EndProject
@@ -97,6 +97,7 @@ Global
 		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.AppStore|x64.ActiveCfg = AppStore|x64
 		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.Debug|iPhone.Build.0 = Debug|iPhone
 		{67709365-3597-4224-8C7F-F93A2EF1A3F6}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
@@ -143,5 +144,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A4FED1A-2151-4C63-85B4-B52DE41EFD48}
 	EndGlobalSection
 EndGlobal

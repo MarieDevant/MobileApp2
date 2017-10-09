@@ -23,6 +23,13 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 
                 <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0,0,180,500"
                          IsVisible="False" x:Name="Border"/>
+                    
+                <SearchBar x:Name="mySearchBar"
+                 AbsoluteLayout.LayoutBounds="150,1,100,50"
+                   TextChanged="mySearchBar_TextChanged"
+                   SearchButtonPressed="mySearchBar_ButtonPressed"
+                   />
+                <ListView x:Name="myListView"/>
 
                 <Button Text="Home"
                 AbsoluteLayout.LayoutBounds="110,1,50,50"

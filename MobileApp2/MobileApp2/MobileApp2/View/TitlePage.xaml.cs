@@ -13,6 +13,11 @@ namespace MobileApp2.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TitlePage : ContentPage
     {
+        private List<string> source = new List<string>()
+        {
+            "Room 1","Room2"
+        };
+
         private bool MainMenuOn = false;
         private void btnAddRoom_Clicked(object sender, EventArgs e)
         {
@@ -46,6 +51,8 @@ namespace MobileApp2.View
         {
             Navigation.PushAsync(new SearchResult());
         }
+
+
 
         public TitlePage()
         {
@@ -235,5 +242,29 @@ namespace MobileApp2.View
             return lign;
         }
 
+        private void mySearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(e.NewTextValue.ToString()))
+                myListView.ItemsSource = source; //return default
+            else
+            {
+                string searchText = mySearchBar.Text.ToLower();
+                IEnumerable<string> result = source.Where(x => x.ToLower().Contains(searchText));
+                if (result.Count() > 0)
+                    myListView.ItemsSource = result;
+                else
+                    myListView.ItemsSource = new List<string>() { "Not found" };
+            }
+        }
+        private void mySearchBar_ButtonPressed(object sender, EventArgs e)
+        {
+            string searchText = mySearchBar.Text.ToLower();
+            IEnumerable<string> result = source.Where(x => x.ToLower().Contains(searchText));
+            if (result.Count() > 0)
+                myListView.ItemsSource = result;
+            else
+                myListView.ItemsSource = new List<string>() { "Not found" };
+        }
     }
 }
+
