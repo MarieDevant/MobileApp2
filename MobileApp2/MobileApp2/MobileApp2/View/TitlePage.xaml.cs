@@ -43,16 +43,35 @@ namespace MobileApp2.View
 
 
             Load lo = new Load(me, vacance, rooms);
-
             InitializeComponent();
-            /*
-            StackLayout grid = AddHeader();
-            this.Content = grid;
+
+            Label header = new Label
+            {
+                Text = "Create your Move",
+                HorizontalOptions = LayoutOptions.Center,
+                FontSize = 30,
+                TextColor = Color.Black,
+            };
+            Label subTitle = new Label
+            {
+                Text = "Rooms",
+                HorizontalOptions = LayoutOptions.Center,
+                FontSize = 20,
+                TextColor = Color.Black,
+            };
+
+            // add the title
+            Textlayout.Children.Add(header);
+            Textlayout.Children.Add(subTitle);
+
+            // StackLayout grid = AddHeader();
+            // this.Content = grid;
             for (int i = 0; i < lo.MoveOut.Rooms.Count; i++){
-                grid.Children.Add(AddRoom(rooms[i]));
+                Textlayout.Children.Add(AddRoom(rooms[i]));
             }
-            */
+
             
+
             /*Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
@@ -76,10 +95,39 @@ namespace MobileApp2.View
             // check if the menu is on
             if (MainMenuOn)
             {
+                MainMenuOn = false;
                 Border.IsVisible = false;
+                Button0.IsVisible = false;
+                Button1.IsVisible = false;
+                Button2.IsVisible = false;
+                Button3.IsVisible = false;
+                Button4.IsVisible = false;
+                Button5.IsVisible = false;
+                Button6.IsVisible = false;
+                Button7.IsVisible = false;
+                Button8.IsVisible = false;
+                Button9.IsVisible = false;
+                Button10.IsVisible = false;
+                Button11.IsVisible = false;
+                Button12.IsVisible = false;
             } else
             {
+                MainMenuOn = true;
                 Border.IsVisible = true;
+                Button0.IsVisible = true;
+                Button1.IsVisible = true;
+                Button2.IsVisible = true;
+                Button3.IsVisible = true;
+                Button4.IsVisible = true;
+                Button5.IsVisible = true;
+                Button6.IsVisible = true;
+                Button7.IsVisible = true;
+                Button8.IsVisible = true;
+                Button9.IsVisible = true;
+                Button10.IsVisible = true;
+                Button11.IsVisible = true;
+                Button12.IsVisible = true;
+
             }
         }
 
@@ -154,33 +202,5 @@ namespace MobileApp2.View
             return lign;
         }
 
-        private static StackLayout AddHeader()
-        {
-            Label header = new Label
-            {
-                Text = "Create your Move",
-                HorizontalOptions = LayoutOptions.Center,
-                FontSize = 30,
-                TextColor = Color.Black,
-            };
-            Label subTitle = new Label
-            {
-                Text = "Rooms",
-                HorizontalOptions = LayoutOptions.Center,
-                FontSize = 20,
-                TextColor = Color.Black,
-            };
-            StackLayout grid = new StackLayout
-            {
-                TranslationY = 70,
-                Padding = 40,
-                Children =
-                {
-                    header,
-                    subTitle
-                }
-            };
-            return grid;
-        }
     }
 }
