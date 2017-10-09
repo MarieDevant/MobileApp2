@@ -4,48 +4,183 @@
     x:Class="MobileApp2.View.MoveObject"
     BackgroundColor = "Lavender">
 	<ContentPage.Content>
-        <StackLayout TranslationY ="70"
+
+        <ScrollView>
+            <AbsoluteLayout>
+
+                <StackLayout TranslationY ="70"
             Padding ="30,0">
-            <Label Text = "Move Object"
+                    <Label Text = "Move Object"
                 HorizontalOptions="Center"
                 VerticalOptions = "Center"
                 FontSize = "30"
                 VerticalTextAlignment = "Start"
                 HeightRequest = "70"
                 TextColor = "Black"/>
-            <StackLayout Orientation ="Horizontal"
+                    <StackLayout Orientation ="Horizontal"
                 HorizontalOptions ="Center"
                 WidthRequest = "200">
-                <Label Text = "Item"
+                        <Label Text = "Item"
                     HorizontalOptions = "StartAndExpand"
                     FontSize ="20"
                     TextColor = "Black"/>
-                <Switch HorizontalOptions="CenterAndExpand"/>
-                <Label Text = "Box"
+                        <Switch HorizontalOptions="CenterAndExpand"/>
+                        <Label Text = "Box"
                     HorizontalOptions = "EndAndExpand" 
                     FontSize ="20"
                     TextColor = "Black"/>
-            </StackLayout>
-            <Entry
+                    </StackLayout>
+                    <Entry
                 Text = "Box name"
                 HorizontalOptions = "Start"
                 VerticalOptions = "Center"
                 FontSize = "20"
                 WidthRequest = "200"
                 TextColor = "Black"/>
-            <Entry
+                    <Entry
                 Text = "Destination"
                 HorizontalOptions = "Start"
                 VerticalOptions = "Center"
                 FontSize = "20"
                 WidthRequest = "200"
                 TextColor = "Black"/>
-            <Button
+                    <Button
                 Text = "Move"
                 TranslationY = "50"
                 VerticalOptions = "End"
                 BackgroundColor = "RoyalBlue"
                 TextColor = "White"/>
-        </StackLayout>
+                </StackLayout>
+
+
+                <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0,0,1000,50"
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+
+                <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0,0,180,500"
+                         IsVisible="False" x:Name="Border"/>
+
+                <Button Text="Home"
+                AbsoluteLayout.LayoutBounds="110,1,50,50"
+                        x:Name="Button0"
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="btnHome_Clicked" />
+
+                <Button Text="Create a Room"
+                AbsoluteLayout.LayoutBounds="0,60,150,35"
+                        x:Name="Button1"
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="btnAddRoom_Clicked" />
+                <Button Text="Create a Box"
+                AbsoluteLayout.LayoutBounds="0,90,150,35"
+                        x:Name="Button2"                        
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"                        
+                       Clicked="btnCreateBox_Clicked" />
+                <Button Text="Create a Item"
+                AbsoluteLayout.LayoutBounds="0,120,150,35"
+                        x:Name="Button3"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"                        
+                       Clicked="btnCreateItem_Clicked" />
+
+                <Button Text="Move Box/Item"
+                AbsoluteLayout.LayoutBounds="0,150,150,35"
+                        x:Name="Button4"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="btnMoveItem_Clicked" />
+                <Button Text="Search Box"
+                AbsoluteLayout.LayoutBounds="0,180,150,35"
+                        x:Name="Button5"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="btnSearch_Clicked" />
+                <Button Text="QR Scanner"
+                AbsoluteLayout.LayoutBounds="0,210,150,35"
+                        x:Name="Button6"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+                <Button Text="Remove Box/Item"
+                AbsoluteLayout.LayoutBounds="0,240,150,35"
+                        x:Name="Button7"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="btnRemoveItem_Clicked" />
+
+                <Button Text="Share Boxes"
+                AbsoluteLayout.LayoutBounds="0,270,150,35"
+                        x:Name="Button8"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Find Others Boxes"
+                AbsoluteLayout.LayoutBounds="0,300,150,35"
+                        x:Name="Button9"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Settings"
+                AbsoluteLayout.LayoutBounds="0,330,150,35"
+                        x:Name="Button10"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+
+                <Button Text="About"
+                AbsoluteLayout.LayoutBounds="0,360,150,35"
+                        x:Name="Button11"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Close Application"
+                AbsoluteLayout.LayoutBounds="0,390,150,35"
+                        x:Name="Button12"  
+                        Font="10"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        IsVisible="False"
+                       Clicked="MenuClicked" />
+
+                <Button Text="Menu"
+                AbsoluteLayout.LayoutBounds="0,1,70,50"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                       Clicked="MenuClicked" />
+
+            </AbsoluteLayout>
+        </ScrollView>
+
+       
 	</ContentPage.Content>
 </ContentPage>
