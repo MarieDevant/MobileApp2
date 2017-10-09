@@ -5,7 +5,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Label Demo"
     BackgroundColor="Lavender">
     <ContentPage.Content>
-<<<<<<< HEAD
+
 
         <ScrollView>
                 <AbsoluteLayout>
@@ -40,7 +40,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"
-                       Clicked="MenuClicked" />
+                       Clicked="btnAddRoom_Clicked" />
                 <Button Text="Create a Box"
                 AbsoluteLayout.LayoutBounds="0,90,150,35"
                         x:Name="Button2"                        
@@ -48,7 +48,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"                        
-                       Clicked="MenuClicked" />
+                       Clicked="btnCreateBox_Clicked" />
                 <Button Text="Create a Item"
                 AbsoluteLayout.LayoutBounds="0,120,150,35"
                         x:Name="Button3"  
@@ -56,7 +56,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"                        
-                       Clicked="MenuClicked" />
+                       Clicked="btnCreateItem_Clicked" />
 
                 <Button Text="Move Box/Item"
                 AbsoluteLayout.LayoutBounds="0,150,150,35"
@@ -65,7 +65,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"
-                       Clicked="MenuClicked" />
+                       Clicked="btnMoveItem_Clicked" />
                 <Button Text="Search Box"
                 AbsoluteLayout.LayoutBounds="0,180,150,35"
                         x:Name="Button5"  
@@ -73,7 +73,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"
-                       Clicked="MenuClicked" />
+                       Clicked="btnSearch_Clicked" />
                 <Button Text="QR Scanner"
                 AbsoluteLayout.LayoutBounds="0,210,150,35"
                         x:Name="Button6"  
@@ -89,7 +89,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         IsVisible="False"
-                       Clicked="MenuClicked" />
+                       Clicked="btnRemoveItem_Clicked" />
 
                 <Button Text="Share Boxes"
                 AbsoluteLayout.LayoutBounds="0,270,150,35"
@@ -145,7 +145,5 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             </AbsoluteLayout>
         </ScrollView>
 
-=======
->>>>>>> 45cab296450afff4c0c822b587a9d7dc023a3977
     </ContentPage.Content>
 </ContentPage>

@@ -14,6 +14,39 @@ namespace MobileApp2.View
     public partial class TitlePage : ContentPage
     {
         private bool MainMenuOn = false;
+        private void btnAddRoom_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateRoom());
+        }
+        private void btnCreateBox_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateBox());
+        }
+        private void btnCreateItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateItem());
+        }
+        private void btnMoveItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MoveObject());
+        }
+        private void btnRemoveItem_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RemoveObject());
+        }
+        private void btnTitlePage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TitlePage());
+        }
+        private void btnDetailBox_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DetailBox());
+        }
+        private void btnSearch_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SearchResult());
+        }
+
         public TitlePage()
         {
             // Initialize a fake database
