@@ -15,7 +15,7 @@ namespace MobileApp2.View
     {
         private List<string> source = new List<string>()
         {
-            "Room 1","Room2"
+            
         };
 
         private bool MainMenuOn = false;
