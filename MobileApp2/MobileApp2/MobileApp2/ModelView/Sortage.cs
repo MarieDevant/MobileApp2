@@ -13,7 +13,7 @@ namespace MobileApp2.ModelView
         {
 
         }
-        public void FindObject(string toFind,Load lo, out List<Room> foundR, out List<Box> foundB, out List<Item> foundI)
+        public static void FindObject(string toFind,Load lo, out List<Room> foundR, out List<Box> foundB, out List<Item> foundI)
          // Return 3 arrays containing the objects where the string ToFind is contained in the name of the object
         {
             toFind = toFind.ToLower();

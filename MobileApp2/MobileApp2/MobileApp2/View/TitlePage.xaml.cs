@@ -137,7 +137,7 @@ namespace MobileApp2.View
             Label room = new Label
             {
                 Text = r.Name,
-                HorizontalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.Center,
                 FontSize = 20,
                 TextColor = Color.White,
