@@ -53,7 +53,7 @@ namespace MobileApp2.View
         }
         private void btnSetting_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SearchResult());
+            Navigation.PushAsync(new MainPageTest());
         }
 
 
@@ -88,7 +88,6 @@ namespace MobileApp2.View
 
             Load lo = new Load(me, vacance, rooms);
             InitializeComponent();
-	    myListView.ItemsSource = source;
 
             Label header = new Label
             {
