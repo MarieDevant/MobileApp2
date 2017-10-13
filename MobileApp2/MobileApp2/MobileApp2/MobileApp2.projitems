@@ -13,12 +13,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Box.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Load.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\MoveOut.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Room.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DetailBox.xaml.cs">
       <DependentUpon>DetailBox.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -50,6 +44,13 @@
       <DependentUpon>SearchResult.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Box.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Load.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\MoveOut.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\LoadJson.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Room.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -93,5 +94,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Model\TestDatabase.json" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MobileApp2.Model
 {
@@ -11,14 +12,9 @@ namespace MobileApp2.Model
 
         private ConsoleColor color;
 
-        private MoveOut moveOut;
-
         private List<Box> boxes;
 
-
-
-
-        public Room(string n, ConsoleColor c, MoveOut mo)
+        public Room(string n, ConsoleColor c)
 
         {
 
@@ -26,11 +22,19 @@ namespace MobileApp2.Model
 
             color = c;
 
-            moveOut = mo;
-            mo.addRoom(this);
             boxes = new List<Box>();
 
         }
+		[JsonConstructor] public Room(string n, ConsoleColor c, List<Box> l)
+
+		{
+
+			name = n;
+
+			color = c;
+
+			boxes = l;
+		}
 
         public void addBox(Box b)
         {
@@ -75,24 +79,6 @@ namespace MobileApp2.Model
 
         }
 
-        public MoveOut MoveOut
-        {
-
-            get
-            {
-
-                return moveOut;
-
-            }
-
-            set
-            {
-
-                moveOut = value;
-
-            }
-
-        }
         public List<Box> Boxes
         {
             get

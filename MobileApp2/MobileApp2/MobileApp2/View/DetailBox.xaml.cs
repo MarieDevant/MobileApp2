@@ -18,13 +18,18 @@ namespace MobileApp2.View
 		{
 			//Fake database
 			User me = new User("me", "pwd");
-			MoveOut vacance = new MoveOut("vacances", me);
-			Room r1 = new Room("Living Room", ConsoleColor.Red, vacance);
-			Box b11 = new Box("B1LR", r1);
-			Item it111 = new Item("Lamp", b11);
-			Item it112 = new Item("Pillow", b11);
+			MoveOut vacance = new MoveOut("vacances");
+			Room r1 = new Room("Living Room", ConsoleColor.Red);
+            vacance.addRoom(r1);
+			Box b11 = new Box("B1LR");
+            r1.addBox(b11);
+			Item it111 = new Item("Lamp");
+            b11.addItem(it111);
+			Item it112 = new Item("Pillow");
+			b11.addItem(it112);
 
-            b = b11;
+
+			b = b11;
 			InitializeComponent ();
             Label title = new Label
             {

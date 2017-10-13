@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MobileApp2.Model
 {
@@ -13,11 +14,10 @@ namespace MobileApp2.Model
 
         private string description;
 
-        private Box box;
 
 
 
-        public Item(string n, string pathImage, string desc, Box FatherBox)
+        public Item(string n, string pathImage, string desc)
 
         {
 
@@ -27,12 +27,9 @@ namespace MobileApp2.Model
 
             description = desc;
 
-            box = FatherBox;
-            FatherBox.addItem(this);
-
         }
 
-        public Item(string n, Box FatherBox)
+        [JsonConstructor] public Item(string n)
         {
 
             name = n;
@@ -41,15 +38,7 @@ namespace MobileApp2.Model
 
             description = "none";
 
-            box = FatherBox;
-            FatherBox.addItem(this);
-
         }
-
-
-
-
-
         public string Name
 
         {
@@ -111,28 +100,6 @@ namespace MobileApp2.Model
             {
 
                 description = value;
-
-            }
-
-        }
-
-        public Box Box
-
-        {
-
-            get
-
-            {
-
-                return box;
-
-            }
-
-            set
-
-            {
-
-                box = value;
 
             }
 

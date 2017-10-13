@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MobileApp2.Model
 {
@@ -8,27 +9,28 @@ namespace MobileApp2.Model
     {
 
         private string name;
-
-        private User user;
-
         private List<Room> rooms;
 
 
-        public MoveOut(string n, User usr)
+        public MoveOut(string name)
 
         {
 
-            name = n;
-
-            user = usr;
+            this.name = name;
             rooms = new List<Room>();
         }
+		[JsonConstructor] public MoveOut(string name, List<Room> rooms)
+
+		{
+
+			this.name = name;
+            this.rooms = rooms;
+		}
 
         public void addRoom(Room r)
         {
             rooms.Add(r);
         }
-
 
         public string Name
         {
@@ -44,25 +46,6 @@ namespace MobileApp2.Model
             {
 
                 name = value;
-
-            }
-
-        }
-
-        public User User
-        {
-
-            get
-            {
-
-                return user;
-
-            }
-
-            set
-            {
-
-                user = value;
 
             }
 

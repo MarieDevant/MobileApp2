@@ -1,0 +1,75 @@
+﻿{
+  "usr": {
+    "name": "me",
+    "password": "pwd"
+  },
+  "moveOut": {
+    "name": "vacance",
+    "rooms": [
+      {
+        "name": "Living Room",
+        "color": "Red",
+        "boxes": [
+          {
+            "name": "B1LR",
+            "items": [
+              {
+                "name": "Lamp",
+              },
+              {
+                "name": "Pillow",
+              }
+            ]
+          },
+          {
+            "name": "B2LR",
+            "items": [
+              {
+                "name": "Blap",
+              }
+            ]
+          },
+        ]
+      },
+      {
+        "name": "Kitchen",
+        "color": "Green",
+        "boxes": [
+          {
+            "name": "B1K",
+            "items": [
+              {
+                "name": "Plates",
+              },
+              {
+                "name": "Forks x24",
+              }
+            ]
+          },
+          {
+            "name": "B2K",
+            "items": [
+              {
+                "name": "Glasses",
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Garage",
+        "color": "Blue",
+        "boxes": [
+          {
+            "name": "B1G",
+            "items": [
+              {
+                "name": "Bike",
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

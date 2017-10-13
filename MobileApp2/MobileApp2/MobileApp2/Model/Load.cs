@@ -8,13 +8,11 @@ namespace MobileApp2.Model
     {
         private User usr;
         private MoveOut moveOut;
-        private List<Room> rooms;
 
-        public Load(User me, MoveOut mi, List<Room> r)
+        public Load(User me, MoveOut mi)
         {
             usr = me;
             moveOut = mi;
-            rooms = r;
         }
 
         public User Usr
@@ -38,17 +36,6 @@ namespace MobileApp2.Model
             set
             {
                 moveOut = value;
-            }
-        }
-        public List<Room> Rooms
-        {
-            get
-            {
-                return rooms;
-            }
-            set
-            {
-                rooms = value;
             }
         }
     }

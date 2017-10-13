@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace MobileApp2.Model
 {
@@ -14,13 +15,12 @@ namespace MobileApp2.Model
 
         private string description;
 
-        private Room room;
 
         private List<Item> items;
 
 
 
-        public Box(string n, string pathImage, string descr, string pathQRCode, Room roomFather)
+        public Box(string n, string pathImage, string descr, string pathQRCode)
 
         {
 
@@ -30,12 +30,9 @@ namespace MobileApp2.Model
             description = descr;
             qrcode = pathQRCode;
             items = new List<Item>();
-            room = roomFather;
-            room.addBox(this);
-
         }
 
-        public Box(string n, Room roomFather)
+        public Box(string n)
         {
 
             name = n;
@@ -45,12 +42,20 @@ namespace MobileApp2.Model
             qrcode = "none";
             description = "none";
             items = new List<Item>();
-            room = roomFather;
-            room.addBox(this);
-
 
         }
 
+		[JsonConstructor] public Box(string n, List<Item> l)
+		{
+
+			name = n;
+
+			image = "none";
+
+			qrcode = "none";
+			description = "none";
+			items = l;
+		}
         public void addItem(Item i)
         {
             items.Add(i);
@@ -115,25 +120,6 @@ namespace MobileApp2.Model
                 qrcode = value;
 
 
-
-            }
-
-        }
-
-        public Room Room
-        {
-
-            get
-            {
-
-                return room;
-
-            }
-
-            set
-            {
-
-                room = value;
 
             }
 
