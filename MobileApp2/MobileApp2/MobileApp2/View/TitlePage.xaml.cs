@@ -15,7 +15,7 @@ namespace MobileApp2.View
     {
         private List<string> source = new List<string>()
         {
-            "Room 1","Room2"
+            
         };
 
         private bool MainMenuOn = false;
@@ -50,6 +50,10 @@ namespace MobileApp2.View
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());
+        }
+        private void btnSetting_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPageTest());
         }
 
 
