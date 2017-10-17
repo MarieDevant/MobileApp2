@@ -14,23 +14,10 @@ namespace MobileApp2.View
 	public partial class DetailBox : ContentPage
 	{
         private Box b;
-		public DetailBox ()
+		public DetailBox (Box box)
 		{
-			//Fake database
-			User me = new User("me", "pwd");
-			MoveOut vacance = new MoveOut("vacances");
-			Room r1 = new Room("Living Room", ConsoleColor.Red);
-            vacance.addRoom(r1);
-			Box b11 = new Box("B1LR");
-            r1.addBox(b11);
-			Item it111 = new Item("Lamp");
-            b11.addItem(it111);
-			Item it112 = new Item("Pillow");
-			b11.addItem(it112);
-
-
-			b = b11;
-			InitializeComponent ();
+            b = box;
+        	InitializeComponent ();
             Label title = new Label
             {
                 Text = b.Name,
@@ -44,15 +31,15 @@ namespace MobileApp2.View
             Textlayout.Children.Add(title);
 
 		}
-        public StackLayout AddHeader()
+        private StackLayout AddHeader()
         {
           
-            /*Image im = new Image
+            Image im = new Image
             {
                 Source = b.Image,
                 WidthRequest = 500,
 
-            };*/
+            };
 
             Label titleDesc = new Label
             {
@@ -175,10 +162,10 @@ namespace MobileApp2.View
         {
             Navigation.PushAsync(new TitlePage());
         }
-        private void btnDetailBox_Clicked(object sender, EventArgs e)
+        /*private void btnDetailBox_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DetailBox());
-        }
+        }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());

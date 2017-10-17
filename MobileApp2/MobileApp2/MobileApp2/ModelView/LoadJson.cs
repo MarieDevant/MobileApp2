@@ -1,17 +1,19 @@
-﻿using System;
+﻿﻿using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using MobileApp2.Model;
 
-namespace MobileApp2.Model
+namespace MobileApp2.ModelView
 {
     class LoadJson
     {
-		public static string path = "../TestDatabase.json";
+		public static string path = "/Users/marie/Documents/GitHub/MobileApp2/MobileApp2/MobileApp2/MobileApp2/JsonData/TestDatabase.json";
 
-		public static void test(string[] args)
+		public static void test()
         {
             Load lo = LoadJson.LoadTheJson();
+            lo.MoveOut.addRoom(new Room("Surprise",ConsoleColor.Black));
 			for (int i = 0; i < lo.MoveOut.Rooms.Count; i++)
 			{
 				Console.WriteLine(lo.MoveOut.Rooms[i].Name);
@@ -39,6 +41,10 @@ namespace MobileApp2.Model
 			}
 
 		}
+        public static void SaveTheJson(Load lo){
+            string jsonData = JsonConvert.SerializeObject(lo, Formatting.Indented);
+			System.IO.File.WriteAllText(path, jsonData);
+        }
 
     }
 }

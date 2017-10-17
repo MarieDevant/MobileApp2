@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace MobileApp2.Model
 {
-    class Room
+    public class Room
     {
 
         private string name;
@@ -39,6 +39,9 @@ namespace MobileApp2.Model
         public void addBox(Box b)
         {
             boxes.Add(b);
+        }
+        public void deleteBox(Box b){
+            boxes.Remove(b);
         }
 
         public string Name

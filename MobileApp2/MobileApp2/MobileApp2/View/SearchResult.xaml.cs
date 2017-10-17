@@ -42,7 +42,7 @@ namespace MobileApp2.View
             //rooms.Add(r3);
 
             //Load lo = new Load(me, vacance, rooms);
-            Load lo = Model.LoadJson.LoadTheJson();
+            Load lo = ModelView.LoadJson.LoadTheJson();
             string searchedString = "i";
 
             List<Room> foundR; List<Box> foundB; List<Item> foundI;
@@ -247,11 +247,11 @@ namespace MobileApp2.View
         private void btnTitlePage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TitlePage());
-        }
+        }/*
         private void btnDetailBox_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DetailBox());
-        }
+        }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());

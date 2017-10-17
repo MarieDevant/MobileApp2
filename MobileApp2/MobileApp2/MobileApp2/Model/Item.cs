@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace MobileApp2.Model
 {
-    class Item
+    public class Item
     {
 
         private string name;
@@ -17,7 +17,7 @@ namespace MobileApp2.Model
 
 
 
-        public Item(string n, string pathImage, string desc)
+        [JsonConstructor] public Item(string n, string pathImage, string desc)
 
         {
 
@@ -29,7 +29,7 @@ namespace MobileApp2.Model
 
         }
 
-        [JsonConstructor] public Item(string n)
+         public Item(string n)
         {
 
             name = n;

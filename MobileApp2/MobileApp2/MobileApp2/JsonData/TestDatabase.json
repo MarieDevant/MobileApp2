@@ -15,9 +15,13 @@
             "items": [
               {
                 "name": "Lamp",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               },
               {
                 "name": "Pillow",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               }
             ]
           },
@@ -26,6 +30,8 @@
             "items": [
               {
                 "name": "Blap",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               }
             ]
           },
@@ -40,9 +46,13 @@
             "items": [
               {
                 "name": "Plates",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               },
               {
                 "name": "Forks x24",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               }
             ]
           },
@@ -51,6 +61,8 @@
             "items": [
               {
                 "name": "Glasses",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               }
             ]
           }
@@ -65,6 +77,8 @@
             "items": [
               {
                 "name": "Bike",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
               }
             ]
           }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MobileApp2.Model
 {
-    class User
+    public class User
     {
 
         private string name;

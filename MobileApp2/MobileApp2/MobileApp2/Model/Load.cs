@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MobileApp2.Model
 {
-    class Load
+    public class Load
     {
         private User usr;
         private MoveOut moveOut;

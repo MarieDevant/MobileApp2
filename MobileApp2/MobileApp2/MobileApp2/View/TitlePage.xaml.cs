@@ -1,4 +1,5 @@
 ﻿﻿using MobileApp2.Model;
+using MobileApp2.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,10 +44,10 @@ namespace MobileApp2.View
         {
             Navigation.PushAsync(new TitlePage());
         }
-        private void btnDetailBox_Clicked(object sender, EventArgs e)
+        /*private void btnDetailBox_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DetailBox());
-        }
+        }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());
@@ -174,7 +175,7 @@ namespace MobileApp2.View
         }
 
 
-        private static StackLayout AddRoom(Room r)
+        private StackLayout AddRoom(Room r)
         {
             Label room = new Label
             {
@@ -206,7 +207,7 @@ namespace MobileApp2.View
             return grid;
         }
 
-        private static StackLayout AddBox(Box b)
+        private StackLayout AddBox(Box b)
         {
 
             Label box = new Label
@@ -224,12 +225,17 @@ namespace MobileApp2.View
             {
                 Text = "+",
                 HorizontalOptions = LayoutOptions.End,
-                BackgroundColor =Color.Lavender,
+                BackgroundColor = Color.Lavender,
                 TextColor = Color.Black,
                 FontSize = 20,
-
+                CommandParameter= b,
             };
-            StackLayout lign = new StackLayout
+
+            plus.Clicked += onPlusButtonClicked;
+
+			
+
+			StackLayout lign = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 TranslationX=20,
@@ -243,6 +249,12 @@ namespace MobileApp2.View
             };
             return lign;
         }
+		private void onPlusButtonClicked(object sender, EventArgs e)
+		{
+			Button btn = (Button)sender;
+			Box boxF = (Box)btn.CommandParameter;
+			Navigation.PushAsync(new DetailBox(boxF));
+		}
 
         private void mySearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {

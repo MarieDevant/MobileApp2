@@ -43,7 +43,7 @@ namespace MobileApp2.View
         }
     private void btnDetailBox_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DetailBox());
+            //Navigation.PushAsync(new DetailBox());
         }
     }
 }

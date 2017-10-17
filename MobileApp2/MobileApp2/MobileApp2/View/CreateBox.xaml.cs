@@ -167,11 +167,11 @@ namespace MobileApp2.View
         private void btnTitlePage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TitlePage());
-        }
+        }/*
         private void btnDetailBox_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DetailBox());
-        }
+        }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());

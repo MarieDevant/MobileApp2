@@ -48,9 +48,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Load.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\MoveOut.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\LoadJson.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Room.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\LoadJson.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -97,8 +97,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)JsonData\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Images\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Model\TestDatabase.json" />
+    <None Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json" />
+    <None Include="$(MSBuildThisFileDirectory)Images\test.png" />
   </ItemGroup>
 </Project>
