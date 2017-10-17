@@ -169,14 +169,8 @@ namespace MobileApp2.View
                 Button2.IsVisible = false;
                 Button3.IsVisible = false;
                 Button4.IsVisible = false;
-                Button5.IsVisible = false;
                 Button6.IsVisible = false;
                 Button7.IsVisible = false;
-                Button8.IsVisible = false;
-                Button9.IsVisible = false;
-                Button10.IsVisible = false;
-                Button11.IsVisible = false;
-                Button12.IsVisible = false;
             }
             else
             {
@@ -187,14 +181,8 @@ namespace MobileApp2.View
                 Button2.IsVisible = true;
                 Button3.IsVisible = true;
                 Button4.IsVisible = true;
-                Button5.IsVisible = true;
                 Button6.IsVisible = true;
                 Button7.IsVisible = true;
-                Button8.IsVisible = true;
-                Button9.IsVisible = true;
-                Button10.IsVisible = true;
-                Button11.IsVisible = true;
-                Button12.IsVisible = true;
 
             }
         }

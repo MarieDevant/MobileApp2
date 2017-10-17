@@ -58,32 +58,33 @@ namespace MobileApp2.View
         public TitlePage()
         {
             // Initialize a fake database
-            //User me = new User("me", "pwd");
-            //MoveOut vacance = new MoveOut("vacances", me);
-            //Room r1 = new Room("Living Room", ConsoleColor.Red, vacance);
-            //Box b11 = new Box("B1LR", r1);
-            //Item it111 = new Item("Lamp", b11);
-            //Item it112 = new Item("Pillow", b11);
-            //Box b12 = new Box("B2LR", r1);
-            //Item it121 = new Item("Blap", b12);
-            //Room r2 = new Room("Kitchen", ConsoleColor.Green, vacance);
-            //Box b21 = new Box("B1K", r2);
-            //Item it211 = new Item("Plates", b21);
-            //Item it212 = new Item("Forks x24", b21);
-            //Box b22 = new Box("B2K", r2);
-            //Item it221 = new Item("Glasses", b22);
-            //Room r3 = new Room("Garage", ConsoleColor.Blue, vacance);
-            //Box b31 = new Box("B1G", r3);
-            //Item it311 = new Item("Bike", b31);
+            /*
+            User me = new User("me", "pwd");
+            MoveOut vacance = new MoveOut("vacances", me);
+            Room r1 = new Room("Living Room", ConsoleColor.Red, vacance);
+            Box b11 = new Box("B1LR", r1);
+            Item it111 = new Item("Lamp", b11);
+            Item it112 = new Item("Pillow", b11);
+            Box b12 = new Box("B2LR", r1);
+            Item it121 = new Item("Blap", b12);
+            Room r2 = new Room("Kitchen", ConsoleColor.Green, vacance);
+            Box b21 = new Box("B1K", r2);
+            Item it211 = new Item("Plates", b21);
+            Item it212 = new Item("Forks x24", b21);
+            Box b22 = new Box("B2K", r2);
+            Item it221 = new Item("Glasses", b22);
+            Room r3 = new Room("Garage", ConsoleColor.Blue, vacance);
+            Box b31 = new Box("B1G", r3);
+            Item it311 = new Item("Bike", b31);
 
 
-            //List<Room> rooms = new List<Room>();
-            //rooms.Add( r1);
-            //rooms.Add(r2);
-            //rooms.Add(r3);
+            List<Room> rooms = new List<Room>();
+            rooms.Add( r1);
+            rooms.Add(r2);
+            rooms.Add(r3);
 
-
-            //Load lo = new Load(me, vacance, rooms);
+            */
+           // Load lo = new Load(me, vacance, rooms);
 
             Load lo = LoadJson.LoadTheJson();
             InitializeComponent();
@@ -145,14 +146,8 @@ namespace MobileApp2.View
                 Button2.IsVisible = false;
                 Button3.IsVisible = false;
                 Button4.IsVisible = false;
-                Button5.IsVisible = false;
                 Button6.IsVisible = false;
                 Button7.IsVisible = false;
-                Button8.IsVisible = false;
-                Button9.IsVisible = false;
-                Button10.IsVisible = false;
-                Button11.IsVisible = false;
-                Button12.IsVisible = false;
             } else
             {
                 MainMenuOn = true;
@@ -162,14 +157,8 @@ namespace MobileApp2.View
                 Button2.IsVisible = true;
                 Button3.IsVisible = true;
                 Button4.IsVisible = true;
-                Button5.IsVisible = true;
                 Button6.IsVisible = true;
                 Button7.IsVisible = true;
-                Button8.IsVisible = true;
-                Button9.IsVisible = true;
-                Button10.IsVisible = true;
-                Button11.IsVisible = true;
-                Button12.IsVisible = true;
 
             }
         }

@@ -4,7 +4,10 @@
     x:Class="MobileApp2.View.MoveObject"
     BackgroundColor = "Lavender">
 	<ContentPage.Content>
-        <StackLayout TranslationY ="70"
+
+        <ScrollView>
+            <AbsoluteLayout>
+                <StackLayout TranslationY ="70"
             Padding ="30,0">
             <Label Text = "Move Object"
                 HorizontalOptions="Center"
@@ -47,5 +50,24 @@
                 BackgroundColor = "RoyalBlue"
                 TextColor = "White"/>
         </StackLayout>
-	</ContentPage.Content>
+
+        <!-- Start of the navigation menu-->
+        <BoxView Style="{StaticResource TopBorder}"/>
+        <BoxView Style="{StaticResource SideBorder}" x:Name ="Border"/>
+
+        <!-- buttons in navigation menu-->
+        <Button Style="{StaticResource HomeButton}" Clicked="btnHome_Clicked" x:Name="Button0"  />
+        <Button Style="{StaticResource CreateRoomButton}" x:Name="Button1" Clicked="btnAddRoom_Clicked" />
+        <Button Style="{StaticResource CreateBoxButton}" x:Name="Button2" Clicked="btnCreateBox_Clicked" />
+        <Button Style="{StaticResource CreateItemButton}" x:Name="Button3" Clicked="btnCreateItem_Clicked" />
+        <Button Style="{StaticResource MoveBoxItemButton}" x:Name="Button4" Clicked="btnMoveItem_Clicked" />
+        <Button Style="{StaticResource RemoveBoxItemButton}" x:Name="Button7" Clicked="btnRemoveItem_Clicked" />
+        <Button Style="{StaticResource QRScannerButton}" x:Name="Button6" Clicked="MenuClicked" />
+        <Button Style="{StaticResource CloseApplicationButton}" x:Name="Button12" Clicked="MenuClicked" />
+
+        <!-- Menu button to open navigation-->
+        <Button  Style="{StaticResource MenuButton}" Text="Menu" Clicked="MenuClicked" />
+        </AbsoluteLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
