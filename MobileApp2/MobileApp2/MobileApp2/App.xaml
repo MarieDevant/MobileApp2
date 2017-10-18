@@ -5,16 +5,15 @@
 	<Application.Resources>
         <ResourceDictionary>
             <!-- top menu bar-->
-            <Style x:Key="TopBorder" TargetType="BoxView">
-                <Setter Property="Color" Value="Blue" />
-                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,0,1000,50" />
-                <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
+            <Style x:Key="TopBorder" TargetType="Image">
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="-315,0,1000,50" />
+                <Setter Property="Source" Value="TopMenu.png" />
             </Style>
 
             <!-- Opening sidebar-->
-            <Style x:Key="SideBorder" TargetType="BoxView">
-                <Setter Property="Color" Value="Blue" />
-                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,0,180,500" />
+            <Style x:Key="SideBorder" TargetType="Image">
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,-520,180,1400" />
+                <Setter Property="Source" Value="Sidemenu.png" />
                 <Setter Property="IsVisible" Value="False" />
             </Style>
 
@@ -25,7 +24,7 @@
                 <Setter Property="IsVisible" Value="False" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="Font" Value="10" />
-                <Setter Property="Text" Value="Home" />
+                <Setter Property="Image" Value="HouseIcon" />
             </Style>
 
             <!-- create a room button sidebar-->
@@ -61,7 +60,7 @@
             <!-- move item/box button sidebar-->
             <Style x:Key="MoveBoxItemButton" TargetType="Button">
                 <Setter Property="BorderColor" Value="Transparent" />
-                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,150,150,35" />
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,180,150,35" />
                 <Setter Property="IsVisible" Value="False" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="Font" Value="10" />
@@ -91,7 +90,7 @@
             <!-- Close Application button sidebar-->
             <Style x:Key="CloseApplicationButton" TargetType="Button">
                 <Setter Property="BorderColor" Value="Transparent" />
-                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,390,150,35" />
+                <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,290,150,35" />
                 <Setter Property="IsVisible" Value="False" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="Font" Value="10" />
@@ -104,7 +103,7 @@
                 <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,1,70,50" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="Font" Value="10" />
-                <Setter Property="Text" Value="Menu" />
+                <Setter Property="Image" Value="MenuIcon.png" />
             </Style>
 
 

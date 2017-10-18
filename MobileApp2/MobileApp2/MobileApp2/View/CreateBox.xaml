@@ -16,8 +16,8 @@
                 </StackLayout>
 
                     <!-- Start of the navigation menu-->
-                <BoxView Style="{StaticResource TopBorder}"/>
-                <BoxView Style="{StaticResource SideBorder}" x:Name ="Border"/>
+                <Image Style="{StaticResource TopBorder}" Source="TopMenu.png"/>
+                <Image Style="{StaticResource SideBorder}" Source="Sidemenu.png" x:Name ="Border"/>
 
                 <!-- buttons in navigation menu-->
                 <Button Style="{StaticResource HomeButton}" Clicked="btnHome_Clicked" x:Name="Button0"  />

@@ -8,7 +8,7 @@ namespace MobileApp2.ModelView
 {
     class LoadJson
     {
-		public static string path = "Users/Daniel/Documents/GitHub/MobileApp2/MobileApp2/MobileApp2/MobileApp2/JsonData/TestDatabase.json";
+		public static string path = "../JsonData/TestDatabase.json";
 
 		public static void test()
         {

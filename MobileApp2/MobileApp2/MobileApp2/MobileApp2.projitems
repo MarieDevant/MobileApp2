@@ -98,10 +98,13 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
     <Folder Include="$(MSBuildThisFileDirectory)JsonData\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Images\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\Sidemenu.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\TopMenu.png" />
+    <Content Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="$(MSBuildThisFileDirectory)Images\test.png" />
   </ItemGroup>
 </Project>

@@ -27,8 +27,8 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 <ListView x:Name="myListView"/>
 
                 <!-- Start of the navigation menu-->
-                <BoxView Style="{StaticResource TopBorder}"/>
-                <BoxView Style="{StaticResource SideBorder}" x:Name ="Border"/>
+                <Image Style="{StaticResource TopBorder}"/>
+                <Image Style="{StaticResource SideBorder}" x:Name ="Border"/>
 
                 <!-- buttons in navigation menu-->
                 <Button Style="{StaticResource HomeButton}"  x:Name="Button0"  />
