@@ -76,6 +76,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\TitlePage.xaml">
@@ -102,9 +105,6 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Images\Sidemenu.png" />
     <Content Include="$(MSBuildThisFileDirectory)Images\TopMenu.png" />
-    <Content Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="$(MSBuildThisFileDirectory)Images\test.png" />
   </ItemGroup>
 </Project>

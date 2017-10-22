@@ -42,7 +42,7 @@ namespace MobileApp2.View
             //rooms.Add(r3);
 
             //Load lo = new Load(me, vacance, rooms);
-            Load lo = ModelView.LoadJson.LoadTheJson();
+            Load lo = (Load) AppDomain.CurrentDomain.GetData("load");
             string searchedString = "i";
 
             List<Room> foundR; List<Box> foundB; List<Item> foundI;

@@ -10,37 +10,32 @@ namespace MobileApp2.ModelView
     {
 		public static string path = "../JsonData/TestDatabase.json";
         public static Load database;
-		public static void test()
-        {
-            Load lo = LoadJson.LoadTheJson();
-            lo.MoveOut.addRoom(new Room("Surprise",ConsoleColor.Black));
-			for (int i = 0; i < lo.MoveOut.Rooms.Count; i++)
-			{
-				Console.WriteLine(lo.MoveOut.Rooms[i].Name);
-				for (int j = 0; j < lo.MoveOut.Rooms[i].Boxes.Count; j++)
-				{
-					Console.WriteLine(lo.MoveOut.Rooms[i].Boxes[j].Name);
-					for (int k = 0; k < lo.MoveOut.Rooms[i].Boxes[j].Items.Count; k++)
-					{
-						Console.WriteLine(lo.MoveOut.Rooms[i].Boxes[j].Items[k].Name);
-					}
-				}
-			}
-			Console.ReadKey();
-        }
 
-		public static Load LoadTheJson()
+
+		public static Load LoadTheJson(string json)
 		{
-            
-			using (StreamReader r = new StreamReader(path))
+/*#if __IOS__
+var resourcePrefix = "MobileApp2.iOS.";
+#endif
+#if __ANDROID__
+var resourcePrefix = "MobileApp2.Droid.";
+#endif
+#if WINDOWS_PHONE
+var resourcePrefix = "MobileApp2.WinPhone.";
+#endif
+
+            var assembly = typeof(LoadJson).GetType().Assembly;
+			Stream stream = assembly.GetManifestResourceStream(resourcePrefix+"TestDatabase.json");
+			using (StreamReader r = new StreamReader(path+"TestDatabase.json"))
 			{
 				string json = r.ReadToEnd();
 
                 Load lo = JsonConvert.DeserializeObject<Load>(json);
                 database = lo;
                 return lo;
-			}
-
+			*/
+            Load lo = JsonConvert.DeserializeObject<Load>(json);
+            return lo;
 		}
         public static void SaveTheJson(Load lo){
             string jsonData = JsonConvert.SerializeObject(lo, Formatting.Indented);

@@ -86,7 +86,7 @@ namespace MobileApp2.View
             */
            // Load lo = new Load(me, vacance, rooms);
 
-            Load lo = LoadJson.LoadTheJson();
+            Load lo = (Load)AppDomain.CurrentDomain.GetData("load");
             InitializeComponent();
 
             Label header = new Label
@@ -113,22 +113,6 @@ namespace MobileApp2.View
             for (int i = 0; i < lo.MoveOut.Rooms.Count; i++){
                 Textlayout.Children.Add(AddRoom(lo.MoveOut.Rooms[i]));
             }
-
-            
-
-            /*Load lo = new Load(me, vacance, rooms);
-
-            InitializeComponent();
-            var layout = new StackLayout { Padding = new Thickness(5, 10) };
-            this.Content = layout;
-            int x = 0;
-            while (x != 3)
-
-            {
-                var label = new Label { Text = "This is a label.", TextColor = Color.FromHex("#77d065"), FontSize = 20 };
-                layout.Children.Add(label);
-                x++;
-            }*/
 
 
         }

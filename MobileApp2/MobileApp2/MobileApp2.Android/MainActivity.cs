@@ -1,4 +1,7 @@
 ﻿using System;
+using Newtonsoft.Json;
+using System.IO;
+using MobileApp2;
 
 using Android.App;
 using Android.Content.PM;
@@ -18,9 +21,20 @@ namespace MobileApp2.Droid
 			ToolbarResource = Resource.Layout.Toolbar; 
 
 			base.OnCreate (bundle);
+			String json = "";
+
+			using (StreamReader sr = new StreamReader(Assets.Open("TestDatabase.json")))
+			{
+				json = sr.ReadToEnd();
+			}
+
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new MobileApp2.App ());
+            App app = new MobileApp2.App();
+            app.setJsonData(json);
+			LoadApplication (app);
+
+
 		}
 	}
 }

@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize />
@@ -153,6 +153,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\HouseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="..\MobileApp2\JsonData\TestDatabase.json">
+      <Link>Assets\TestDatabase.json</Link>
+    </AndroidAsset>
   </ItemGroup>
   <Import Project="..\MobileApp2\MobileApp2.projitems" Label="Shared" Condition="Exists('..\MobileApp2\MobileApp2.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -1,0 +1,89 @@
+﻿{
+  "usr": {
+    "name": "me",
+    "password": "pwd"
+  },
+  "moveOut": {
+    "name": "vacance",
+    "rooms": [
+      {
+        "name": "Living Room",
+        "color": "Red",
+        "boxes": [
+          {
+            "name": "B1LR",
+            "items": [
+              {
+                "name": "Lamp",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              },
+              {
+                "name": "Pillow",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              }
+            ]
+          },
+          {
+            "name": "B2LR",
+            "items": [
+              {
+                "name": "Blap",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              }
+            ]
+          },
+        ]
+      },
+      {
+        "name": "Kitchen",
+        "color": "Green",
+        "boxes": [
+          {
+            "name": "B1K",
+            "items": [
+              {
+                "name": "Plates",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              },
+              {
+                "name": "Forks x24",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              }
+            ]
+          },
+          {
+            "name": "B2K",
+            "items": [
+              {
+                "name": "Glasses",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Garage",
+        "color": "Blue",
+        "boxes": [
+          {
+            "name": "B1G",
+            "items": [
+              {
+                "name": "Bike",
+                "pathImage": "../Images/test.png",
+                "desc": "none"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -14,9 +14,6 @@ namespace MobileApp2.Model
 
         private string description;
 
-
-
-
         [JsonConstructor] public Item(string n, string pathImage, string desc)
 
         {
