@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="MobileApp2.View.CreateItem"
-    BackgroundColor = "Lavender">
-	<ContentPage.Content>
-
-
-
+    BackgroundColor = "Lavender"
+    xmlns:local="clr-namespace:MobileApp2.View">
+    <local:CreateRoom></local:CreateRoom>
+    <local:CreateBox></local:CreateBox>
+    <ContentPage>
+    <ContentPage.Content>
         <ScrollView>
             <AbsoluteLayout>
 
                 <StackLayout x:Name="Textlayout">
+                    <Label Text="{Binding Testo}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
                     <Label Text=" "></Label>
                     <Label Text=" "></Label>
                     <Label Text=" "></Label>
@@ -37,4 +39,5 @@
         </ScrollView>
 
     </ContentPage.Content>
-</ContentPage>
+    </ContentPage>
+</CarouselPage>
