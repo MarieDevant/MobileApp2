@@ -4,8 +4,8 @@
     x:Class="MobileApp2.View.CreateRoom"
     BackgroundColor = "Lavender"
               xmlns:local="clr-namespace:MobileApp2.View">
-    <local:CreateBox></local:CreateBox>
     <local:CreateItem></local:CreateItem>
+    <local:CreateBox></local:CreateBox>
     <ContentPage>
 	    <ContentPage.Content>
 
