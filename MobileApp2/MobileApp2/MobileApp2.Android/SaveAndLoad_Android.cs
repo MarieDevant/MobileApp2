@@ -36,7 +36,7 @@ namespace MobileApp2.Android
 
 		string CreatePathToFile(string filename)
 		{
-            var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.Programs);
+            var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 			return Path.Combine(docsPath, filename);
 		}
 	}
