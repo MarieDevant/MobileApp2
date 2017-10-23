@@ -14,24 +14,18 @@ namespace MobileApp2
 {
     public partial class App : Application
     {
-        public static string jsonString;
         public static Load lo;
-        public string JsonString { get => jsonString; set => jsonString = value; }
         public Load Lo { get => lo; set => lo = value; }
 
         public App()
         {
-			lo = LoadJson.LoadTheJson(JsonString);
-            AppDomain.CurrentDomain.SetData("load",lo);
+			Load lo =LoadJson.LoadTheJson();
 			InitializeComponent();
             this.MainPage = new NavigationPage(new MainPageTest());
 
 
         }
 
-        public void setJsonData(string json){
-            jsonString = json;
-        }
         public Load getLoad(){
             return lo;
         }

@@ -3,43 +3,31 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
 using MobileApp2.Model;
+using MobileApp2.Android;
 
 namespace MobileApp2.ModelView
 {
     class LoadJson
     {
-		public static string path = "../JsonData/TestDatabase.json";
+		const string filename = "TestDatabase.json";
         public static Load database;
 
+        public LoadJson(){}
 
-		public static Load LoadTheJson(string json)
+        public static Load LoadTheJson()
 		{
-/*#if __IOS__
-var resourcePrefix = "MobileApp2.iOS.";
-#endif
-#if __ANDROID__
-var resourcePrefix = "MobileApp2.Droid.";
-#endif
-#if WINDOWS_PHONE
-var resourcePrefix = "MobileApp2.WinPhone.";
-#endif
+			var fileService = Xamarin.Forms.DependencyService.Get<ISaveAndLoad>();
+			var output = "";
 
-            var assembly = typeof(LoadJson).GetType().Assembly;
-			Stream stream = assembly.GetManifestResourceStream(resourcePrefix+"TestDatabase.json");
-			using (StreamReader r = new StreamReader(path+"TestDatabase.json"))
-			{
-				string json = r.ReadToEnd();
-
-                Load lo = JsonConvert.DeserializeObject<Load>(json);
-                database = lo;
-                return lo;
-			*/
-            Load lo = JsonConvert.DeserializeObject<Load>(json);
+			output = fileService.LoadTextAsync(filename);
+			Load lo = JsonConvert.DeserializeObject<Load>(output);
+            database = lo;
+            AppDomain.CurrentDomain.SetData("load", lo);
             return lo;
 		}
         public static void SaveTheJson(Load lo){
             string jsonData = JsonConvert.SerializeObject(lo, Formatting.Indented);
-			System.IO.File.WriteAllText(path, jsonData);
+			System.IO.File.WriteAllText(filename, jsonData);
         }
 
         public static void RemoveItem(Item it)
