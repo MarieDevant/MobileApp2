@@ -102,9 +102,9 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Images\Sidemenu.png" />
     <Content Include="$(MSBuildThisFileDirectory)Images\TopMenu.png" />
-    <Content Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <None Include="$(MSBuildThisFileDirectory)Images\test.png" />
   </ItemGroup>
 </Project>
