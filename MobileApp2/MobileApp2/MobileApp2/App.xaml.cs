@@ -19,7 +19,7 @@ namespace MobileApp2
 
         public App()
         {
-			Load lo =LoadJson.LoadTheJson();
+			LoadJson.LoadTheJson();
 			InitializeComponent();
             this.MainPage = new NavigationPage(new MainPageTest());
 

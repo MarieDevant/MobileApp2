@@ -77,10 +77,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestDatabase.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestDatabase.json">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

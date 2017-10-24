@@ -9,21 +9,18 @@ namespace MobileApp2.ModelView
 {
     class LoadJson
     {
-		const string filename = "JsonData/TestDatabase.json";
-        public static Load database;
+		const string filename = "TestDatabase.json";
 
         public LoadJson(){}
 
-        public static Load LoadTheJson()
+        public static void LoadTheJson()
 		{
 			var fileService = Xamarin.Forms.DependencyService.Get<ISaveAndLoad>();
 			var output = "";
 
 			output = fileService.LoadTextAsync(filename);
 			Load lo = JsonConvert.DeserializeObject<Load>(output);
-            database = lo;
-            AppDomain.CurrentDomain.SetData("load", lo);
-            return lo;
+            App.lo = lo;
 		}
         public static void SaveTheJson(Load lo){
             string jsonData = JsonConvert.SerializeObject(lo, Formatting.Indented);
@@ -43,7 +40,7 @@ namespace MobileApp2.ModelView
         }
         public static Room FindRoom(Box b)
         {
-            foreach(Room r in database.MoveOut.Rooms)
+            foreach(Room r in App.lo.MoveOut.Rooms)
             {
                 foreach(Box box in r.Boxes)
                 {
@@ -57,7 +54,7 @@ namespace MobileApp2.ModelView
         }
         public static Box FindBox(Item i)
         {
-            foreach (Room r in database.MoveOut.Rooms)
+            foreach (Room r in App.lo.MoveOut.Rooms)
             {
                 foreach (Box box in r.Boxes)
                 {

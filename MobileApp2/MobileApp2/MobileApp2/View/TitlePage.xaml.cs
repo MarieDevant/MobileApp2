@@ -86,7 +86,6 @@ namespace MobileApp2.View
             */
            // Load lo = new Load(me, vacance, rooms);
 
-            Load lo = (Load)AppDomain.CurrentDomain.GetData("load");
             InitializeComponent();
 
             Label header = new Label
@@ -110,8 +109,8 @@ namespace MobileApp2.View
 
             // StackLayout grid = AddHeader();
             // this.Content = grid;
-            for (int i = 0; i < lo.MoveOut.Rooms.Count; i++){
-                Textlayout.Children.Add(AddRoom(lo.MoveOut.Rooms[i]));
+            for (int i = 0; i < App.lo.MoveOut.Rooms.Count; i++){
+                Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
             }
 
 

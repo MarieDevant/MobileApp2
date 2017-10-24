@@ -22,7 +22,8 @@ namespace MobileApp2.Android
 
 		public string LoadTextAsync(string filename)
 		{
-			var path = CreatePathToFile(filename);
+            var path = CreatePathToFile(filename);
+            //var path = "/Users/marie/Documents/GitHub/MobileApp2/MobileApp2/MobileApp2/MobileApp2/JsonData/TestDatabase.json";
 			using (StreamReader sr = File.OpenText(path))
 				return sr.ReadToEnd();
 		}
@@ -36,7 +37,7 @@ namespace MobileApp2.Android
 
 		string CreatePathToFile(string filename)
 		{
-            var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var docsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			return Path.Combine(docsPath, filename);
 		}
 	}
