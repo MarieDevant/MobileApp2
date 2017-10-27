@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\ConnectSQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DetailBox.xaml.cs">
       <DependentUpon>DetailBox.xaml</DependentUpon>
