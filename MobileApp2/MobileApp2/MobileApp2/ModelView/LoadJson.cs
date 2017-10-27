@@ -9,7 +9,7 @@ namespace MobileApp2.ModelView
 {
     class LoadJson
     {
-		const string filename = "TestDatabase.json";
+		const string filename = "Users/Daniel/Documents/GitHub/MobileApp2/MobileApp2/MobileApp2/MobileApp2/JsonData/TestDatabase.json";
 
         public LoadJson(){}
 
