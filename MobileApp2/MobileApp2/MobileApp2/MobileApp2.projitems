@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\ConnectSQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DetailBox.xaml.cs">
       <DependentUpon>DetailBox.xaml</DependentUpon>
@@ -80,7 +81,7 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestDatabase.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)JsonData\TestDatabase.json">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Data\TestDatabase.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
@@ -104,11 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
-    <Folder Include="$(MSBuildThisFileDirectory)JsonData\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Data\TableInTexte.txt" />
     <Content Include="$(MSBuildThisFileDirectory)Images\Sidemenu.png" />
     <Content Include="$(MSBuildThisFileDirectory)Images\TopMenu.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Data\TestDatabase.s3db" />
     <None Include="$(MSBuildThisFileDirectory)Images\test.png" />
   </ItemGroup>
 </Project>
