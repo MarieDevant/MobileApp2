@@ -14,26 +14,27 @@ namespace MobileApp2.Model
 
         private List<Box> boxes;
 
-        private MoveOut fatherMoveOut;
-        public Room(int i,string n, ConsoleColor c)
+        private MoveOut fatherMoveOut{ get; set; };
+
+        public Room(int i, string n, ConsoleColor c, MoveOut father)
 
         {
             id = i;
 
             name = n;
-
+            fatherMoveOut = father;
             color = c;
 
             boxes = new List<Box>();
 
         }
-		[JsonConstructor] public Room(int i,string n, ConsoleColor c, List<Box> l)
+		[JsonConstructor] public Room(int i, string n, ConsoleColor c, List<Box> l, MoveOut father)
 
 		{
             id = i;
 
             name = n;
-
+			fatherMoveOut = father;
 			color = c;
 
 			boxes = l;

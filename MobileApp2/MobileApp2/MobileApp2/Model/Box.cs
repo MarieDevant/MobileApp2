@@ -16,7 +16,7 @@ namespace MobileApp2.Model
 
         private string description;
 
-        private Room fatherRoom;
+        private Room fatherRoom{ get; set; };
         private List<Item> items;
 
 
@@ -33,13 +33,13 @@ namespace MobileApp2.Model
             items = new List<Item>();
         }
 
-        public Box(int i,string n)
+        public Box(int i, string n, Room father)
         {
             id = i;
             name = n;
+			fatherRoom = father;
 
-            image = "none";
-
+			image = "none";
             qrcode = "none";
             description = "none";
             items = new List<Item>();
