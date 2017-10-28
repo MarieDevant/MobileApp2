@@ -51,7 +51,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\MoveOut.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Room.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelView\LoadJson.cs" />
+    <None Include="$(MSBuildThisFileDirectory)ModelView\LoadJson.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\ISaveAndLoad.cs" />
   </ItemGroup>
   <ItemGroup>
