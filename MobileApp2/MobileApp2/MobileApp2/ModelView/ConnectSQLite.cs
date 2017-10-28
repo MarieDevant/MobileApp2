@@ -93,7 +93,7 @@ namespace MobileApp2.ModelView
 			return result;
 		}
 
-		public List<Box> getBoxes(Room r)
+		public static List<Box> getBoxes(Room r)
 		{
 			List<Box> result = new List<Box>();
 			OpenCo();
@@ -107,7 +107,7 @@ namespace MobileApp2.ModelView
 			CloseCo();
 			return result;
 		}
-		public List<Item> getItems(Box b)
+		public static List<Item> getItems(Box b)
 		{
 			List<Item> result = new List<Item>();
 			OpenCo();
@@ -122,7 +122,7 @@ namespace MobileApp2.ModelView
 			return result;
 		}
 
-		public Load getLoad(User me)
+		public static Load getLoadDatabase(User me)
 		{
 			MoveOut mo = getMoveOut();
 			mo.Rooms = getRooms(mo);
