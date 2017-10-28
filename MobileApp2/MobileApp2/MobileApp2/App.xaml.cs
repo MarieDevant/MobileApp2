@@ -19,7 +19,8 @@ namespace MobileApp2
 
         public App()
         {
-			LoadJson.LoadTheJson();
+            User me = new User("me", "password");
+			lo= ConnectSQLite.getLoadDatabase(me);
 			InitializeComponent();
             this.MainPage = new NavigationPage(new MainPageTest());
 

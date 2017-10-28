@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +9,7 @@ namespace MobileApp2.ModelView
 {
     class LoadJson
     {
-		const string filename = "Users/Daniel/Documents/GitHub/MobileApp2/MobileApp2/MobileApp2/MobileApp2/JsonData/TestDatabase.json";
+		const string filename = "Users/Marie/Documents/GitHub/MobileApp2/MobileApp2/MobileApp2/MobileApp2/JsonData/TestDatabase.json";
 
         public LoadJson(){}
 
@@ -50,7 +50,7 @@ namespace MobileApp2.ModelView
                     }
                 }
             }
-            return new Room("unknown", ConsoleColor.White);
+            return new Room(-1,"unknown", ConsoleColor.White, new MoveOut(-1,"unknown"));
         }
         public static Box FindBox(Item i)
         {
@@ -67,7 +67,7 @@ namespace MobileApp2.ModelView
                     }
                 }
             }
-            return new Box("unknown");
+            return new Box(-1,"unknown",new Room(-1,"unknown",ConsoleColor.White,new MoveOut(-1,"unknown")));
         }
 
     }
