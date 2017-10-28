@@ -7,9 +7,9 @@ namespace MobileApp2.Model
 {
     public class Item
     {
-        private int id { get; set; }
+        public int id { get; set; }
         private string name;
-        private Box fatherBox { get; set; }
+        public Box fatherBox { get; set; }
         private string image;
 
         private string description;

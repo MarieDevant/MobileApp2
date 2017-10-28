@@ -7,7 +7,7 @@ namespace MobileApp2.Model
 {
     public class Box
     {
-        private int id { get; set; }
+        public int id { get; set; }
         private string name;
 
         private string image;
@@ -16,7 +16,7 @@ namespace MobileApp2.Model
 
         private string description;
 
-        private Room fatherRoom{ get; set; };
+        public Room fatherRoom{ get; set; }
         private List<Item> items;
 
 

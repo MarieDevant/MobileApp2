@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
+using Mono.Data.Sqlite;
 using System.Data;
 using System.Data.Common;
 using MobileApp2.Model;
@@ -10,12 +10,12 @@ namespace MobileApp2.ModelView
 {
     class ConnectSQLite
     {
-        private SQLiteConnection my_co;
-        private SQLiteCommand cmd;
+        private static SqliteConnection my_co;
+        private static SqliteCommand cmd;
 
 		public static void OpenCo()
 		{
-			my_co = new SQLiteConnection("Data Source=TestDatabase.s3db");
+			my_co = new SqliteConnection("Data Source=TestDatabase.s3db");
 			my_co.Open();
 		}
 		public static void CloseCo()
@@ -69,8 +69,8 @@ namespace MobileApp2.ModelView
 			MoveOut mo = null;
 			OpenCo();
 			string query = "SELECT * FROM MoveOut";
-			cmd = new SQLiteCommand(query, my_co);
-			SQLiteDataReader reader = cmd.ExecuteReader();
+			cmd = new SqliteCommand(query, my_co);
+			SqliteDataReader reader = cmd.ExecuteReader();
 			while (reader.Read())
 			{
 				mo = new MoveOut(int.Parse(reader["id"].ToString()), reader["name"].ToString());
@@ -83,8 +83,8 @@ namespace MobileApp2.ModelView
 			List<Room> result = new List<Room>();
 			OpenCo();
 			string query = "SELECT * FROM Room";
-			cmd = new SQLiteCommand(query, my_co);
-			SQLiteDataReader reader = cmd.ExecuteReader();
+			cmd = new SqliteCommand(query, my_co);
+			SqliteDataReader reader = cmd.ExecuteReader();
 			while (reader.Read())
 			{
 				result.Add(new Room(int.Parse(reader["id"].ToString()), reader["name"].ToString(), (ConsoleColor)Enum.Parse(typeof(ConsoleColor), reader["Color"].ToString()), mo));
@@ -98,8 +98,8 @@ namespace MobileApp2.ModelView
 			List<Box> result = new List<Box>();
 			OpenCo();
 			string query = "SELECT * FROM Box WHERE fatherRoom =" + r.id;
-			cmd = new SQLiteCommand(query, my_co);
-			SQLiteDataReader reader = cmd.ExecuteReader();
+			cmd = new SqliteCommand(query, my_co);
+			SqliteDataReader reader = cmd.ExecuteReader();
 			while (reader.Read())
 			{
 				result.Add(new Box(int.Parse(reader["id"].ToString()), reader["name"].ToString(), r));
@@ -112,8 +112,8 @@ namespace MobileApp2.ModelView
 			List<Item> result = new List<Item>();
 			OpenCo();
 			string query = "SELECT * FROM Item WHERE fatherBox =" + b.id;
-			cmd = new SQLiteCommand(query, my_co);
-			SQLiteDataReader reader = cmd.ExecuteReader();
+			cmd = new SqliteCommand(query, my_co);
+			SqliteDataReader reader = cmd.ExecuteReader();
 			while (reader.Read())
 			{
 				result.Add(new Item(int.Parse(reader["id"].ToString()), reader["name"].ToString(), b));
@@ -141,8 +141,8 @@ namespace MobileApp2.ModelView
 			List<Room> result = new List<Room>();
 			OpenCo();
 			string query = "SELECT * FROM Room";
-			cmd = new SQLiteCommand(query, my_co);
-			SQLiteDataReader reader = cmd.ExecuteReader();
+			cmd = new SqliteCommand(query, my_co);
+			SqliteDataReader reader = cmd.ExecuteReader();
 			while (reader.Read())
 			{
 				if (reader["name"].ToString().ToLower().Contains(search.ToLower()))

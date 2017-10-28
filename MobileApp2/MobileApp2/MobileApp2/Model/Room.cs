@@ -7,14 +7,14 @@ namespace MobileApp2.Model
 {
     public class Room
     {
-        private int id { get; set; }
+        public int id { get; set; }
         private string name;
 
         private ConsoleColor color;
 
         private List<Box> boxes;
 
-        private MoveOut fatherMoveOut{ get; set; };
+        public MoveOut fatherMoveOut{ get; set; }
 
         public Room(int i, string n, ConsoleColor c, MoveOut father)
 
@@ -39,20 +39,6 @@ namespace MobileApp2.Model
 
 			boxes = l;
 		}
-
-        public Room(int i,string n, ConsoleColor c, MoveOut father)
-
-        {
-            id = i;
-
-            name = n;
-
-            color = c;
-
-            boxes = new List<Box>();
-
-            fatherMoveOut = father;
-        }
 
         public void addBox(Box b)
         {
