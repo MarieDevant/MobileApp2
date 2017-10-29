@@ -17,6 +17,10 @@
                         <Label Text=" "></Label>
                         <Label Text=" "></Label>
                         <Label Text=" "></Label>
+                        <Label Text="Create a Room" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30" VerticalTextAlignment="Start"
+                               HeightRequest="70" TextColor="Black"></Label>
+                        <Entry Placeholder="Room Name" Text="" TextColor="Black"></Entry>
+                        
                     </StackLayout>
 
                     <!-- Start of the navigation menu-->
