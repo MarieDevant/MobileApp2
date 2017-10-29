@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace MobileApp2.View
 {
-    public partial class CreateBox : ContentPage
+    public partial class CreateBox : CarouselPage
     {
         public CreateBox()
         {
