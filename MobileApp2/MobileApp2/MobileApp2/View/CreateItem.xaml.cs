@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace MobileApp2.View
 {
-    public partial class CreateItem : CarouselPage
+    public partial class CreateItem : ContentPage
     {
         public CreateItem()
         {
