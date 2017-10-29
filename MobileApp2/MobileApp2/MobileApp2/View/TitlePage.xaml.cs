@@ -57,6 +57,14 @@ namespace MobileApp2.View
 
         public TitlePage()
         {
+            MyDatabase db = new MyDatabase();
+            db.Insert(new ToDoItem()
+            {
+                Title = "test",
+                Details = "test",
+                Complete = true
+            });
+          List<ToDoItem> items = db.GetAllItems();
             // Initialize a fake database
             /*
             User me = new User("me", "pwd");
@@ -84,13 +92,13 @@ namespace MobileApp2.View
             rooms.Add(r3);
 
             */
-           // Load lo = new Load(me, vacance, rooms);
+            // Load lo = new Load(me, vacance, rooms);
 
             InitializeComponent();
 
             Label header = new Label
             {
-                Text = "Create your Move",
+                Text = items[0].Title,
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = 30,
                 TextColor = Color.Black,
@@ -109,9 +117,9 @@ namespace MobileApp2.View
 
             // StackLayout grid = AddHeader();
             // this.Content = grid;
-            for (int i = 0; i < App.lo.MoveOut.Rooms.Count; i++){
-                Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
-            }
+            //for (int i = 0; i < App.lo.MoveOut.Rooms.Count; i++){
+            //   Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
+            //}
 
 
         }

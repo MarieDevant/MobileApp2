@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using Mono.Data.Sqlite;
 using System.Data;
 using System.Data.Common;
 using MobileApp2.Model;
-
+using SQLite.Net;
+using Xamarin.Forms;
+using SQLite.Net.Interop;
+using MobileApp2.Interfaces;
 
 namespace MobileApp2.ModelView
 {
     class ConnectSQLite
     {
-        private static SqliteConnection my_co;
-        private static SqliteCommand cmd;
+        private static SQLiteConnection my_co;
+        private static SQLiteCommand cmd;
 
 		public static void OpenCo()
 		{
-			my_co = new SqliteConnection("Data Source=TestDatabase.s3db");
-			my_co.Open();
+            my_co = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(),
+                DependencyService.Get<IFileHelper>().GetLocalpath("TestDatabase.s3db"));
+			my_co.
 		}
 		public static void CloseCo()
 		{
