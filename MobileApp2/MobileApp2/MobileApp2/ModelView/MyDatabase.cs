@@ -17,7 +17,7 @@ namespace MobileApp2.ModelView
         {
 
             database = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(),
-                  DependencyService.Get<IFileHelper>().GetLocalpath("TestDatabase.db3"));
+                  DependencyService.Get<IFileHelper>().GetLocalpath("TestDatabase2.db3"));
             database.CreateTable<ToDoItem>();
 
         }

@@ -11,11 +11,16 @@ namespace MobileApp2.ModelView
         [AutoIncrement]
         public int Id { get; set; }
 
-        public string Title { get; set; }
+        public string ObjectType { get; set; }
 
-        public string Details { get; set; }
+        public string Description { get; set; }
 
-        public bool Complete { get; set; }
+        public string Name { get; set; }
+
+        public string Owner { get; set; }
+
+        public string Picture { get; set; }
+
 
     }
 }

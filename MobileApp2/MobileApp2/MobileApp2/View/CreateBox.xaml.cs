@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileApp2.ModelView;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -10,138 +11,9 @@ namespace MobileApp2.View
         public CreateBox()
         {
             InitializeComponent();
-            //header
-            Label title = new Label
-            {
-                Text = "Create a box",
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                FontSize = 30,
-                VerticalTextAlignment = TextAlignment.Start,
-                HeightRequest = 70,
-                TextColor = Color.Black
-            };
-
-            Textlayout.Children.Add(title);
-
-            Textlayout.Children.Add(AddContent());
-
 		}
        
-        public StackLayout AddContent(){
-
-            Entry name = new Entry { 
-                Text = "Box Name",
-                TextColor = Color.Black
-            };
-			Entry desc = new Entry
-			{
-				Text = "Description",
-				TextColor = Color.Black
-			};
-            Label optionalImage = new Label
-            {
-                
-                HorizontalOptions = LayoutOptions.Center,
-                FontSize = 20,
-                TextColor = Color.Black,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalTextAlignment = TextAlignment.Center,
-                Text = "Add Image\n(Optional)",
-                WidthRequest = 150
-                    
-            };
-            BoxView fakeImage = new BoxView{
-                Color = Color.Gray,
-                WidthRequest = 100,
-                HeightRequest = 100,
-                HorizontalOptions = LayoutOptions.End
-            };
-			StackLayout imageLayout = new StackLayout
-			{
-				Orientation = StackOrientation.Horizontal,
-				Children =
-				{
-                    optionalImage,
-                    fakeImage
-				}
-			};
-			Label qrcodeTitle = new Label{
-                HorizontalOptions = LayoutOptions.Center,
-                FontSize = 20,
-                WidthRequest = 150,
-                TextColor = Color.Black,
-                HorizontalTextAlignment = TextAlignment.Start,
-                VerticalTextAlignment = TextAlignment.Center,
-                Text = "QR Code"
-            };
-            BoxView fakeQRCode = new BoxView{
-                Color = Color.Gray,
-                WidthRequest = 50,
-                HeightRequest = 50,
-                HorizontalOptions = LayoutOptions.End
-            };
-
-            StackLayout qrcodeLayout = new StackLayout
-            {
-                Orientation = StackOrientation.Horizontal,
-                Children =
-                {
-                    qrcodeTitle,
-                    fakeQRCode
-                }
-            };
-
-			Entry nameItem = new Entry
-			{
-				HorizontalOptions = LayoutOptions.Center,
-				FontSize = 20,
-				TextColor = Color.Black,
-				HorizontalTextAlignment = TextAlignment.Start,
-                WidthRequest = 250,
-                Text = "Add an Item (Optional) "
-			};
-            Button addItem = new Button
-            {
-				Text = "+",
-				HorizontalOptions = LayoutOptions.End,
-				BackgroundColor = Color.Lavender,
-				TextColor = Color.Black,
-				FontSize = 20,
-            };
-
-			StackLayout addItemLayout = new StackLayout
-			{
-				Orientation = StackOrientation.Horizontal,
-				Children =
-				{
-					nameItem,
-					addItem
-				}
-			};
-
-            Button addIt = new Button
-            {
-                Text = "Add Box",
-                TranslationY = 50,
-                VerticalOptions = LayoutOptions.End,
-                BackgroundColor = Color.RoyalBlue,
-                TextColor= Color.White
-            };
-            StackLayout grid = new StackLayout
-            {
-                Spacing = 20,
-                Children = {
-                    name,
-                    desc,
-                    imageLayout,
-                    qrcodeLayout,
-                    addItemLayout,
-                    addIt
-                }
-            };
-            return grid;
-        }
+ 
 
         private bool MainMenuOn = false;
         private void btnAddRoom_Clicked(object sender, EventArgs e)
@@ -167,11 +39,7 @@ namespace MobileApp2.View
         private void btnTitlePage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TitlePage());
-        }/*
-        private void btnDetailBox_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new DetailBox());
-        }*/
+        }
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());
@@ -211,6 +79,29 @@ namespace MobileApp2.View
                 Button12.IsVisible = true;
 
             }
+        }
+
+        private void Test(object sender, EventArgs e)
+        {
+             MyDatabase db = new MyDatabase();
+             if (Description.Text == "" || Name.Text == "")
+             {
+                Message.IsVisible = true;
+                Message.Text = "Error Invalid Input";
+                Message.TextColor = Color.Red;
+                 return;
+             }
+             // insert data check here
+             db.Insert(new ToDoItem()
+             {
+                 ObjectType = "Box",
+                 Description = Description.Text,
+                 Name = Name.Text,
+                 Owner = "Unsorted"
+             });
+            Message.IsVisible = true;
+            Message.Text = "Box Added";
+            Message.TextColor = Color.Green;
         }
     }
 }
