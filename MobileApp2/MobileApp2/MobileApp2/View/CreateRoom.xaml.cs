@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace MobileApp2.View
 {
-    public partial class CreateRoom : CarouselPage
+    public partial class CreateRoom : ContentPage
     {
         public CreateRoom()
         {
