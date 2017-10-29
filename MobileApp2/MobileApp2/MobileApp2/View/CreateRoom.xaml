@@ -19,8 +19,12 @@
                         <Label Text=" "></Label>
                         <Label Text="Create a Room" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30" VerticalTextAlignment="Start"
                                HeightRequest="70" TextColor="Black"></Label>
-                        <Entry Placeholder="Room Name" Text="" TextColor="Black"></Entry>
-                        
+                        <Entry x:Name="Name" Placeholder="Room Name" Text="" TextColor="Black"></Entry>
+                        <Label Text="Add Box (Optional)" FontSize="20" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
+                        <Entry Placeholder="Box Name" Text="" FontSize="20" HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Start" WidthRequest="250"></Entry>
+                        <Button Text="+" BackgroundColor="Lavender" TextColor="Black" FontSize="20"></Button>
+                        <Button Clicked="AddRoomButton" Text="Add Room" BackgroundColor="RoyalBlue" TextColor="White"></Button>
+                        <Label x:Name="Message" Text="Invalid options" TextColor="Red" IsVisible="False"></Label>
                     </StackLayout>
 
                     <!-- Start of the navigation menu-->

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileApp2.ModelView;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -10,113 +11,10 @@ namespace MobileApp2.View
         public CreateRoom()
         {
             InitializeComponent();
-            Label title = new Label
-            {
-                Text = "Create a room",
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                FontSize = 30,
-                VerticalTextAlignment = TextAlignment.Start,
-                HeightRequest = 70,
-                TextColor = Color.Black
-            };
-            Textlayout.Children.Add(title);
-            Textlayout.Children.Add(AddContent());
 
-		}
 
-        public StackLayout AddContent(){
+         }
 
-            Entry name = new Entry { 
-                Text = "Room Name",
-                TextColor = Color.Black
-            };
-            Label color = new Label
-            {
-				HorizontalOptions = LayoutOptions.Center,
-				FontSize = 20,
-				TextColor = Color.Black,
-				HorizontalTextAlignment = TextAlignment.Start,
-				VerticalTextAlignment = TextAlignment.Start,
-				WidthRequest = 300,
-                Text = "Color :"
-            };
-            BoxView rectColor = new BoxView { 
-                Color = Color.Red,
-                WidthRequest = 20,
-                HeightRequest = 20,
-                HorizontalOptions = LayoutOptions.Center
-            };
-            StackLayout col = new StackLayout
-            {
-				Orientation = StackOrientation.Horizontal,
-                VerticalOptions = LayoutOptions.Start,
-				Children =
-				{
-					color,
-                    rectColor
-				}
-			};
-
-			Label optionalBox = new Label
-			{
-                
-				HorizontalOptions = LayoutOptions.Center,
-				FontSize = 20,
-				TextColor = Color.Black,
-				HorizontalTextAlignment = TextAlignment.Start,
-				VerticalTextAlignment = TextAlignment.Center,
-                Text = "Add Box (Optional)"
-			};
-			Entry nameBox = new Entry
-			{
-				HorizontalOptions = LayoutOptions.Center,
-				FontSize = 20,
-				TextColor = Color.Black,
-				HorizontalTextAlignment = TextAlignment.Start,
-                WidthRequest = 250,
-				Text = "Box Name"
-			};
-            Button addBox = new Button
-            {
-				Text = "+",
-				HorizontalOptions = LayoutOptions.End,
-				BackgroundColor = Color.Lavender,
-				TextColor = Color.Black,
-				FontSize = 20,
-            };
-
-			StackLayout addBoxLayout = new StackLayout
-			{
-				Orientation = StackOrientation.Horizontal,
-				Children =
-				{
-					nameBox,
-					addBox
-				}
-			};
-
-            Button addIt = new Button
-            {
-                Text = "Add Room",
-                TranslationY = 100,
-                VerticalOptions = LayoutOptions.End,
-                BackgroundColor = Color.RoyalBlue,
-                TextColor= Color.White
-            };
-            StackLayout grid = new StackLayout
-            {
-                Spacing = 20,
-                Children = {
-                    name,
-                    col,
-                    optionalBox,
-                    addBoxLayout,
-                    addIt
-                }
-            };
-            return grid;
-        }
 
         private bool MainMenuOn = false;
         private void btnAddRoom_Clicked(object sender, EventArgs e)
@@ -143,11 +41,6 @@ namespace MobileApp2.View
         {
             Navigation.PushAsync(new TitlePage());
         }
-        /*
-        private void btnDetailBox_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new DetailBox());
-        }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SearchResult());
@@ -185,6 +78,28 @@ namespace MobileApp2.View
                 Button7.IsVisible = true;
 
             }
+        }
+
+        private void AddRoomButton(object sender, EventArgs e)
+        {
+            MyDatabase db = new MyDatabase();
+            if ( Name.Text == "")
+            {
+                Message.IsVisible = true;
+                Message.Text = "Error Invalid Input";
+                Message.TextColor = Color.Red;
+                return;
+            }
+            // insert data check here
+            db.Insert(new ToDoItem()
+            {
+                ObjectType = "Room",
+                Name = Name.Text,
+                Owner = "none"
+            });
+            Message.IsVisible = true;
+            Message.Text = "Box Added";
+            Message.TextColor = Color.Green;
         }
     }
 }
