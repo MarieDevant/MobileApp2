@@ -3,42 +3,42 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="MobileApp2.View.CreateRoom"
     BackgroundColor = "Lavender"
-              xmlns:local="clr-namespace:MobileApp2.View">
+    xmlns:local="clr-namespace:MobileApp2.View">
+    <ContentPage>
+        <ContentPage.Content>
+
+        <ScrollView>
+            <AbsoluteLayout>
+
+                <StackLayout x:Name="Textlayout">
+        
+                    <Label Text=" "></Label>
+                    <Label Text=" "></Label>
+                    <Label Text=" "></Label>
+                </StackLayout>
+
+                <!-- Start of the navigation menu-->
+                <Image Style="{StaticResource TopBorder}"/>
+                <Image Style="{StaticResource SideBorder}" x:Name ="Border"/>
+
+                <!-- buttons in navigation menu-->
+                <Button Style="{StaticResource HomeButton}" Clicked="btnHome_Clicked" x:Name="Button0"  />
+                <Button Style="{StaticResource CreateRoomButton}" x:Name="Button1" Clicked="btnAddRoom_Clicked" />
+                <Button Style="{StaticResource CreateBoxButton}" x:Name="Button2" Clicked="btnCreateBox_Clicked" />
+                <Button Style="{StaticResource CreateItemButton}" x:Name="Button3" Clicked="btnCreateItem_Clicked" />
+                <Button Style="{StaticResource MoveBoxItemButton}" x:Name="Button4" Clicked="btnMoveItem_Clicked" />
+                <Button Style="{StaticResource RemoveBoxItemButton}" x:Name="Button7" Clicked="btnRemoveItem_Clicked" />
+                <Button Style="{StaticResource QRScannerButton}" x:Name="Button6" Clicked="MenuClicked" />
+                <Button Style="{StaticResource CloseApplicationButton}" x:Name="Button12" Clicked="MenuClicked" />
+
+                <!-- Menu button to open navigation-->
+                <Button  Style="{StaticResource MenuButton}" Text="Menu" Clicked="MenuClicked" />
+
+            </AbsoluteLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+        </ContentPage>
     <local:CreateBox></local:CreateBox>
     <local:CreateItem></local:CreateItem>
-    <ContentPage>
-	    <ContentPage.Content>
-
-            <ScrollView>
-                <AbsoluteLayout>
-
-                    <StackLayout x:Name="Textlayout">
-                        <Label Text="{Binding Testo}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-                        <Label Text=" "></Label>
-                        <Label Text=" "></Label>
-                        <Label Text=" "></Label>
-                    </StackLayout>
-
-                    <!-- Start of the navigation menu-->
-                    <Image Style="{StaticResource TopBorder}"/>
-                    <Image Style="{StaticResource SideBorder}" x:Name ="Border"/>
-
-                    <!-- buttons in navigation menu-->
-                    <Button Style="{StaticResource HomeButton}" Clicked="btnHome_Clicked" x:Name="Button0"  />
-                    <Button Style="{StaticResource CreateRoomButton}" x:Name="Button1" Clicked="btnAddRoom_Clicked" />
-                    <Button Style="{StaticResource CreateBoxButton}" x:Name="Button2" Clicked="btnCreateBox_Clicked" />
-                    <Button Style="{StaticResource CreateItemButton}" x:Name="Button3" Clicked="btnCreateItem_Clicked" />
-                    <Button Style="{StaticResource MoveBoxItemButton}" x:Name="Button4" Clicked="btnMoveItem_Clicked" />
-                    <Button Style="{StaticResource RemoveBoxItemButton}" x:Name="Button7" Clicked="btnRemoveItem_Clicked" />
-                    <Button Style="{StaticResource QRScannerButton}" x:Name="Button6" Clicked="MenuClicked" />
-                    <Button Style="{StaticResource CloseApplicationButton}" x:Name="Button12" Clicked="MenuClicked" />
-
-                    <!-- Menu button to open navigation-->
-                    <Button  Style="{StaticResource MenuButton}" Text="Menu" Clicked="MenuClicked" />
-
-                </AbsoluteLayout>
-            </ScrollView>
-
-        </ContentPage.Content>
-    </ContentPage>
 </CarouselPage>
