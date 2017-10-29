@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace MobileApp2.View
 {
-    public partial class CreateItem : ContentPage
+    public partial class CreateItem : CarouselPage
     {
         public CreateItem()
         {
