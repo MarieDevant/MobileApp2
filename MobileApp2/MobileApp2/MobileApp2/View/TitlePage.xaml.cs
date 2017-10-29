@@ -58,10 +58,12 @@ namespace MobileApp2.View
         public TitlePage()
         {
             MyDatabase db = new MyDatabase();
-//            db.Insert(new ToDoItem()
-  //          {
-
-    //        });
+            db.Insert(new ToDoItem()
+            {
+                Title = "test",
+                Details = "test",
+                Complete = true
+            });
           List<ToDoItem> items = db.GetAllItems();
             // Initialize a fake database
             /*
@@ -96,7 +98,7 @@ namespace MobileApp2.View
 
             Label header = new Label
             {
-                Text = "title",
+                Text = items[0].Title,
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = 30,
                 TextColor = Color.Black,
