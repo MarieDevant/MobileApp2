@@ -1,4 +1,4 @@
-﻿﻿using MobileApp2.Model;
+﻿﻿﻿using MobileApp2.Model;
 using MobileApp2.ModelView;
 using System;
 using System.Collections.Generic;
@@ -109,16 +109,12 @@ namespace MobileApp2.View
                 TextColor = Color.Black,
             };
 
+            StackLayout details = getDetails(items);
+
             // add the title
             Textlayout.Children.Add(header);
             Textlayout.Children.Add(subTitle);
-
-            // StackLayout grid = AddHeader();
-            // this.Content = grid;
-            //for (int i = 0; i < App.lo.MoveOut.Rooms.Count; i++){
-            //   Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
-            //}
-
+            Textlayout.Children.Add(details);
 
         }
 
@@ -152,6 +148,72 @@ namespace MobileApp2.View
             }
         }
 
+        private StackLayout getDetails(List<ToDoItem> list){
+			StackLayout grid = new StackLayout
+			{
+				Margin = new Thickness(0, 10),
+				TranslationY = 20,
+			};
+            foreach(ToDoItem obj in list){
+                if (obj.ObjectType.ToLower() == "room"){
+					Label room = new Label
+					{
+                        Text = obj.Name,
+						HorizontalOptions = LayoutOptions.CenterAndExpand,
+						VerticalOptions = LayoutOptions.Center,
+						FontSize = 20,
+						TextColor = Color.White,
+						HorizontalTextAlignment = TextAlignment.Center,
+						VerticalTextAlignment = TextAlignment.Center,
+						HeightRequest = 40,
+						WidthRequest = 400,
+						BackgroundColor = Color.RoyalBlue,
+					};
+                    grid.Children.Add(room);
+                    foreach(ToDoItem obj2 in list){
+                        if(obj2.ObjectType.ToLower()=="box" && obj2.Owner == obj.Id){
+							Label box = new Label
+							{
+								Text = obj2.Name,
+								HorizontalOptions = LayoutOptions.Center,
+								FontSize = 20,
+								TextColor = Color.Black,
+								HorizontalTextAlignment = TextAlignment.Start,
+								VerticalTextAlignment = TextAlignment.Center,
+								WidthRequest = 300,
+								BackgroundColor = Color.Lavender,
+							};
+							Button plus = new Button
+							{
+								Text = "+",
+								HorizontalOptions = LayoutOptions.End,
+								BackgroundColor = Color.Lavender,
+								TextColor = Color.Black,
+								FontSize = 20,
+								CommandParameter = obj2,
+							};
+
+							plus.Clicked += onPlusButtonClicked;
+
+							StackLayout lign = new StackLayout
+							{
+								Orientation = StackOrientation.Horizontal,
+								TranslationX = 20,
+								HeightRequest = 40,
+								VerticalOptions = LayoutOptions.Center,
+								Children =
+				                    {
+					                    box,
+					                    plus
+				                    }
+							};
+                            grid.Children.Add(lign);
+                        }
+                    }
+                }
+            }
+            return grid;
+        }
 
         private StackLayout AddRoom(Room r)
         {
