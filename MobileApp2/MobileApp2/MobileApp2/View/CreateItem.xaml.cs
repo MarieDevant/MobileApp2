@@ -84,7 +84,7 @@ namespace MobileApp2.View
         {
             MyDatabase db = new MyDatabase();
             List<ToDoItem> items = db.GetAllItems();
-            if (Name.Text == "")
+            if (Name.Text == "" || BoxName.Text = "")
             {
                 Message.IsVisible = true;
                 Message.Text = "Error Invalid Input";
@@ -102,6 +102,7 @@ namespace MobileApp2.View
                 }
                 count++;
             }
+
             if (count == items.Count)
             {
                 Message.IsVisible = true;
@@ -115,7 +116,7 @@ namespace MobileApp2.View
                 {
                     ObjectType = "Item",
                     Name = Name.Text,
-                    Owner = BoxName1.Text
+                    Owner = BoxName.Text
                 });
                 Message.IsVisible = true;
                 Message.Text = "Item Added";
