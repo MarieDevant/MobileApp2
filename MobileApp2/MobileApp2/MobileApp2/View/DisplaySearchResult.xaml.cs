@@ -12,6 +12,10 @@ namespace MobileApp2.View
 {
     public partial class DisplaySearchResult : ContentPage
     {
+		private List<string> source = new List<string>()
+		{
+			"Room 1","Room2"
+		};
         public DisplaySearchResult(string ToFind)
         {
 			InitializeComponent();
