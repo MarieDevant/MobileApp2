@@ -73,7 +73,7 @@ namespace MobileApp2.View
                 Button1.IsVisible = true;
                 Button2.IsVisible = true;
                 Button3.IsVisible = true;
-                Button4.IsVisible = true;x`
+                Button4.IsVisible = true;
                 Button6.IsVisible = true;
                 Button7.IsVisible = true;
 
