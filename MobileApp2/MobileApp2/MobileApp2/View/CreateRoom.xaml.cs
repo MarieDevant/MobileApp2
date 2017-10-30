@@ -11,10 +11,7 @@ namespace MobileApp2.View
         public CreateRoom()
         {
             InitializeComponent();
-
-
         }
-
 
         private bool MainMenuOn = false;
         private void btnAddRoom_Clicked(object sender, EventArgs e)

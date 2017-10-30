@@ -30,6 +30,13 @@ namespace MobileApp2.UITest
         {
             app.Screenshot("First screen.");
         }
+
+        [Test]
+        public void NewTest()
+        {
+            app.Tap(x => x.Text("Menu"));
+            app.Tap(x => x.Text("Create a Room"));
+        }
     }
 }
 
