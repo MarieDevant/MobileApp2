@@ -52,6 +52,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
     <None Include="$(MSBuildThisFileDirectory)ModelView\LoadJson.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\ISaveAndLoad.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\DisplaySearchResult.xaml.cs">
+      <DependentUpon>DisplaySearchResult.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -78,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Data\TestDatabase.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\DisplaySearchResult.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

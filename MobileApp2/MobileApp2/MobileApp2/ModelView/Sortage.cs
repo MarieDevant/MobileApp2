@@ -12,8 +12,9 @@ namespace MobileApp2.ModelView
         public Sortage()
         {
         }
-        public static void FindObject(string toFind, Load lo, out List<Room> foundR, out List<Box> foundB, out List<Item> foundI)
-        // Return 3 lists containing the objects where the string ToFind is contained in the name of the object
+
+        public static List<ToDoItem> FindObject(string toFind, List<ToDoItem> list)
+        // Return a list containing the objects where the string ToFind is contained in the name of the object
         {
             toFind = toFind.ToLower();
 
@@ -56,6 +57,7 @@ namespace MobileApp2.ModelView
                 }
 
             }
+            return found;
         }
     }
 }
