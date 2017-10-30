@@ -1,4 +1,4 @@
-﻿using MobileApp2.ModelView;
+﻿﻿using MobileApp2.ModelView;
 using System;
 using System.Collections.Generic;
 
@@ -84,6 +84,8 @@ namespace MobileApp2.View
         {
             MyDatabase db = new MyDatabase();
             List<ToDoItem> items = db.GetAllItems();
+
+
             if (Name.Text == "" || BoxName.Text == "")
             {
                 Message.IsVisible = true;
