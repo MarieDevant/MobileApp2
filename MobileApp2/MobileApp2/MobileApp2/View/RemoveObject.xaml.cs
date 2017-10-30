@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileApp2.ModelView;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -10,65 +11,10 @@ namespace MobileApp2.View
         public RemoveObject()
         {
             InitializeComponent();
-			//StackLayout grid = AddHeader();
-			//this.Content = grid;
-			//grid.Children.Add(AddContent());
+		
 
 		}
-		public StackLayout AddHeader()
-		{
-
-			Label title = new Label
-			{
-				Text = "Remove Object",
-				HorizontalOptions = LayoutOptions.Center,
-				VerticalOptions = LayoutOptions.Center,
-				FontSize = 30,
-				VerticalTextAlignment = TextAlignment.Start,
-				HeightRequest = 70,
-				TextColor = Color.Black
-			};
-			StackLayout head = new StackLayout
-			{
-				TranslationY = 70,
-				Padding = new Thickness(30, 0),
-				Children =
-				{
-					title
-				}
-			};
-			return head;
-		}
-        public StackLayout AddContent(){
-			Entry name = new Entry
-			{
-				Text = "Item name",
-				HorizontalOptions = LayoutOptions.Start,
-				VerticalOptions = LayoutOptions.Center,
-				FontSize = 20,
-                WidthRequest = 200,
-				TextColor = Color.Black
-			};
-			Button remove = new Button
-			{
-				Text = "Remove",
-				TranslationY = 50,
-				VerticalOptions = LayoutOptions.End,
-				BackgroundColor = Color.RoyalBlue,
-				TextColor = Color.White
-			};
-			StackLayout content = new StackLayout
-			{
-				Padding = new Thickness(30, 0),
-				Children =
-				{
-					name,
-                    remove
-				}
-			};
-
-            return content;
-        }
+		
 
         private bool MainMenuOn = false;
         private void btnAddRoom_Clicked(object sender, EventArgs e)
@@ -138,6 +84,39 @@ namespace MobileApp2.View
 
             }
         }
+        private void submit(object sender, EventArgs e)
+        {
+            MyDatabase db = new MyDatabase();
+            List<ToDoItem> items = db.GetAllItems();
+
+            // validate
+            if (Name.Text == "")
+            {
+                errormesage.IsVisible = true;
+                errormesage.TextColor = Color.Red;
+                errormesage.Text = "Invalid inputs";
+            }
+
+            foreach(ToDoItem item in items)
+            {
+                if (item.Name == Name.Text)
+                {
+                    // delete
+                    db.Delete(item);
+                    errormesage.IsVisible = true;
+                    errormesage.TextColor = Color.Green;
+                    errormesage.Text = "Object deleted";
+                    return;
+                }
+
+            }
+
+            errormesage.IsVisible = true;
+            errormesage.TextColor = Color.Red;
+            errormesage.Text = "No Object under that name found";
+
+        }
+
     }
 
 

@@ -59,7 +59,25 @@ namespace MobileApp2.View
         {
             MyDatabase db = new MyDatabase();
             List<ToDoItem> items = db.GetAllItems();
+            int newlist = 0 ;
+            foreach(ToDoItem i in items)
+            {
+                if (i.ObjectType == "Room" && i.Name == "unsorted")
+                {
+                    newlist ++;
+                }
+            }
 
+            if (newlist == 0)
+            {
+                // add unsorted room in for boxes
+                db.Insert(new ToDoItem()
+                {
+                    ObjectType = "Room",
+                    Name = "unsorted",
+                    Owner = "none"
+                });
+            }
 
             InitializeComponent();
 

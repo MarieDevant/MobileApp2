@@ -13,7 +13,6 @@
                 <AbsoluteLayout>
 
                     <StackLayout x:Name="Textlayout">
-                        <Label Text="{Binding Testo}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
                         <Label Text=" "></Label>
                         <Label Text=" "></Label>
                         <Label Text=" "></Label>

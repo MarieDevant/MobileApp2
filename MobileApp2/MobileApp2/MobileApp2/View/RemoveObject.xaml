@@ -31,19 +31,31 @@
                     TextColor = "Black"/>
             </StackLayout>
             <Entry
-                Text = "Box name"
+                x:Name="Name"
+                Text=""
+                Placeholder = "Name"
                 HorizontalOptions = "Start"
                 VerticalOptions = "Center"
                 FontSize = "20"
                 WidthRequest = "200"
                 TextColor = "Black"/>
             <Button
+                Clicked="submit"
                 Text = "Remove"
-                TranslationY = "50"
                 VerticalOptions = "End"
                 BackgroundColor = "RoyalBlue"
                 TextColor = "White"/>
-        </StackLayout>
+
+                    <Label
+                        x:Name="errormesage"
+                        Text = ""
+                HorizontalOptions="Center"
+                VerticalOptions = "Center"
+                FontSize = "20"
+                VerticalTextAlignment = "Start"
+                HeightRequest = "70"
+                IsVisible="False"/>
+                </StackLayout>
 
 
 

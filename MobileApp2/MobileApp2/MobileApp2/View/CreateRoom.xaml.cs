@@ -12,7 +12,6 @@ namespace MobileApp2.View
         {
             InitializeComponent();
 
-
         }
 
 
