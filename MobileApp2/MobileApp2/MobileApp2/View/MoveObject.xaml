@@ -23,21 +23,25 @@
                     HorizontalOptions = "StartAndExpand"
                     FontSize ="20"
                     TextColor = "Black"/>
-                <Switch HorizontalOptions="CenterAndExpand"/>
+                <Switch x:Name="Switch1" HorizontalOptions="CenterAndExpand"/>
                 <Label Text = "Box"
                     HorizontalOptions = "EndAndExpand" 
                     FontSize ="20"
                     TextColor = "Black"/>
             </StackLayout>
             <Entry
-                Text = "Box name"
+                x:Name="objectname"
+                Text = ""
+                Placeholder="Box Or Item Name"
                 HorizontalOptions = "Start"
                 VerticalOptions = "Center"
                 FontSize = "20"
                 WidthRequest = "200"
                 TextColor = "Black"/>
             <Entry
-                Text = "Destination"
+                x:Name="destination"
+                Placeholder="Destination"
+                Text =""
                 HorizontalOptions = "Start"
                 VerticalOptions = "Center"
                 FontSize = "20"
@@ -46,11 +50,18 @@
             <Button
                 Clicked="ConfirmButton"
                 Text = "Move"
-                TranslationY = "50"
                 VerticalOptions = "End"
                 BackgroundColor = "RoyalBlue"
                 TextColor = "White"/>
-        </StackLayout>
+
+                    <Label
+                        x:Name="errormesage"
+                        Text = ""
+                    HorizontalOptions = "EndAndExpand" 
+                    FontSize ="20"
+                    TextColor = "Black"
+                           IsVisible="False"/>
+                </StackLayout>
 
         <!-- Start of the navigation menu-->
                 <Image Style="{StaticResource TopBorder}"/>

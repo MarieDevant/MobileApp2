@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileApp2.ModelView;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -85,7 +86,46 @@ namespace MobileApp2.View
         }
         private void ConfirmButton(object sender, EventArgs e)
         {
+            // connect to database and get everything
+            MyDatabase db = new MyDatabase();
+            List<ToDoItem> items = db.GetAllItems();
 
+            // check for valid information
+            if (objectname.Text == "" || destination.Text == "")
+            {
+                errormesage.IsVisible = true;
+                errormesage.TextColor = Color.Red;
+                errormesage.Text = "Invalid inputs";
+                return;
+            }
+
+
+            foreach (ToDoItem item in items)
+            {
+                if (item.ObjectType == "Box" || item.ObjectType == "Item")
+                {
+                    if (item.Name == objectname.Text)
+                    {
+                        // add owner to object
+                        db.InsertUpdate(new ToDoItem
+                        {
+                            Id = item.Id,
+                            Name = item.Name,
+                            Description = item.Description,
+                            ObjectType = item.ObjectType,
+                            Owner = destination.Text,
+                        });
+                        errormesage.IsVisible = true;
+                        errormesage.TextColor = Color.Green;
+                        errormesage.Text = "Moved";
+                        return;
+                    }
+                }
+
+            }
+            errormesage.IsVisible = true;
+            errormesage.TextColor = Color.Red;
+            errormesage.Text = "No object found";
         }
             
     }
