@@ -11,7 +11,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 <AbsoluteLayout>
 
                 <StackLayout x:Name ="SearchBarBase" >
-                <Entry x:Name="SearchString" ></Entry>
+                <Entry x:Name="SearchString" WidthRequest = "250"></Entry>
                 <Button x:Name="searchButton" Clicked="buttonSearchClicked"></Button>    
                 </StackLayout>
                 

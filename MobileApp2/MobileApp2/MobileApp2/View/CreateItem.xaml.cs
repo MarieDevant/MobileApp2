@@ -98,7 +98,7 @@ namespace MobileApp2.View
             int count = 0;
             while (stop)
             {
-				if (items[count].ObjectType.ToLower() == "box" && items[count].Name.ToLower() == BoxName.ToLower())
+				if (items[count].ObjectType.ToLower() == "box" && items[count].Name.ToLower() == BoxName.Text.ToLower())
 				{
 					stope = false;
 				}

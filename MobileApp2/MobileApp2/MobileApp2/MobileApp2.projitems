@@ -13,10 +13,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFileHelper.cs" />
-    <None Include="$(MSBuildThisFileDirectory)ModelView\ConnectSQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\MyDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelView\ToDoItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DetailBox.xaml.cs">
       <DependentUpon>DetailBox.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -40,17 +38,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)View\MoveObject.xaml.cs">
       <DependentUpon>MoveObject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Box.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Load.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\MoveOut.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Room.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
-    <None Include="$(MSBuildThisFileDirectory)ModelView\LoadJson.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelView\ISaveAndLoad.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DisplaySearchResult.xaml.cs">
       <DependentUpon>DisplaySearchResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Model\ToDoItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -71,12 +62,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MoveObject.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestDatabase.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Data\TestDatabase.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\DisplaySearchResult.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

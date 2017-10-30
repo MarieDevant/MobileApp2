@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite.Net.Attributes;
 
-namespace MobileApp2.ModelView
+namespace MobileApp2.Model
 {
     public class ToDoItem
     {
