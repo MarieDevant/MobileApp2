@@ -167,7 +167,7 @@ namespace MobileApp2.View
 
                         foreach (ToDoItem obj2 in list)
                         {
-                            if (obj2.ObjectType.ToLower() == "box" && obj2.Owner == obj.Name)
+                            if (obj2.ObjectType.ToLower() == "box" && obj2.Owner.ToLower() == obj.Name.ToLower())
                             {
                                 Label box = new Label
                                 {
@@ -214,84 +214,11 @@ namespace MobileApp2.View
         }
 
 
-        private StackLayout AddRoom(Room r)
-        {
-            Label room = new Label
-            {
-                Text = r.Name,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.Center,
-                FontSize = 20,
-                TextColor = Color.White,
-                HorizontalTextAlignment= TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center,
-                HeightRequest = 40,
-                WidthRequest = 400,
-                BackgroundColor = Color.RoyalBlue,
-            };
-            StackLayout grid = new StackLayout
-            {
-                Margin=new Thickness(0,10),
-                TranslationY = 20,
-                Children =
-                {
-                    room
-                }
-            };
 
-            for (int j = 0; j < r.Boxes.Count; j++)
-            {
-                grid.Children.Add(AddBox(r.Boxes[j]));
-            }
-            return grid;
-        }
-
-        private StackLayout AddBox(Box b)
-        {
-
-            Label box = new Label
-            {
-                Text = b.Name,
-                HorizontalOptions = LayoutOptions.Center,
-                FontSize = 20,
-                TextColor = Color.Black,
-                HorizontalTextAlignment = TextAlignment.Start,
-				VerticalTextAlignment = TextAlignment.Center,
-                WidthRequest = 300,
-                BackgroundColor = Color.Lavender,
-            };
-            Button plus = new Button
-            {
-                Text = "+",
-                HorizontalOptions = LayoutOptions.End,
-                BackgroundColor = Color.Lavender,
-                TextColor = Color.Black,
-                FontSize = 20,
-                CommandParameter= b,
-            };
-
-            plus.Clicked += onPlusButtonClicked;
-
-			
-
-			StackLayout lign = new StackLayout
-            {
-                Orientation = StackOrientation.Horizontal,
-                TranslationX=20,
-                HeightRequest =40,
-                VerticalOptions = LayoutOptions.Center,
-                Children =
-                {
-                    box,
-                    plus
-                }
-            };
-            return lign;
-        }
 		private void onPlusButtonClicked(object sender, EventArgs e)
 		{
 		/*	Button btn = (Button)sender;
-			Box boxF = (Box)btn.CommandParameter;
+			ToDoItem boxF = (ToDoItem)btn.CommandParameter;
 			Navigation.PushAsync(new DetailBox(boxF));
             */
 		}

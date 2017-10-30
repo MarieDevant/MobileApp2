@@ -96,12 +96,16 @@ namespace MobileApp2.View
             bool stop = true;
             int count = 0;
             while(stop){
+                if(items[count].ObjectType.ToLower() == "room" && items[count].Name.ToLower()==RoomName.ToLower()){
+                    stope = false;
+                }
                 if(count == items.Count)
                 {
                     stop = false;
                 }
                 count++;
             }
+
             if (count == items.Count)
             {
                 Message.IsVisible = true;
