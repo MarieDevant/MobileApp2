@@ -25,37 +25,7 @@ namespace MobileApp2.ModelView
                 if (obj.Name.Contains(toFind))
                 {
                     found.Add(obj);
-
-                    foundR = new List<Room>();
-                    foundB = new List<Box>();
-                    foundI = new List<Item>();
-                    for (int i = 0; i < lo.MoveOut.Rooms.Count; i++)
-                    {
-                        Room r = lo.MoveOut.Rooms[i];
-                        if (r.Name.ToLower().Contains(toFind))
-                        {
-                            foundR.Add(r);
-                        }
-                        for (int j = 0; j < r.Boxes.Count; j++)
-                        {
-                            Box b = r.Boxes[j];
-                            if (b.Name.ToLower().Contains(toFind))
-                            {
-                                foundB.Add(b);
-                            }
-                            for (int k = 0; k < b.Items.Count; k++)
-                            {
-                                Item it = b.Items[k];
-                                if (it.Name.ToLower().Contains(toFind))
-                                {
-                                    foundI.Add(it);
-
-                                }
-                            }
-                        }
-                    }
                 }
-
             }
             return found;
         }

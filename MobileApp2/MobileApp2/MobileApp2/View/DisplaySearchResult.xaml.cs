@@ -113,7 +113,7 @@ namespace MobileApp2.View
         private StackLayout DisplayResult(string ToFind){
 			MyDatabase db = new MyDatabase();
 			List<ToDoItem> items = db.GetAllItems();
-            List<ToDoItem> result = Sortage.Find(ToFind, items);
+            List<ToDoItem> result = Sortage.FindObject(ToFind, items);
 			StackLayout grid = new StackLayout
 			{
 				Margin = new Thickness(0, 10),

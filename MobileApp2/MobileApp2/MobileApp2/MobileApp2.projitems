@@ -15,7 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFileHelper.cs" />
     <None Include="$(MSBuildThisFileDirectory)ModelView\ConnectSQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\MyDatabase.cs" />
-    <None Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\ToDoItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DetailBox.xaml.cs">
       <DependentUpon>DetailBox.xaml</DependentUpon>
