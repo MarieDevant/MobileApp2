@@ -34,12 +34,10 @@ namespace MobileApp2.View
 		}
         private StackLayout AddHeader()
         {
-          
             Image im = new Image
             {
                 Source = b.Picture,
                 WidthRequest = 500,
-
             };
 
             Label titleDesc = new Label
@@ -208,7 +206,7 @@ namespace MobileApp2.View
         }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-           // Navigation.PushAsync(new SearchResult());
+            Navigation.PushAsync(new SearchResult());
         }
         private void btnHome_Clicked(object sender, EventArgs e)
         {
