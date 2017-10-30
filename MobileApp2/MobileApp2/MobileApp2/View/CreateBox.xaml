@@ -18,6 +18,7 @@
                     </Label>
                     <Entry  x:Name="Name" Placeholder ="Box Name" TextColor="Black" Text=""></Entry>
                     <Entry x:Name="Description" Placeholder="Description" TextColor="Black" Text=""></Entry>
+                    <Entry x:Name="RoomName" Placeholder="Room (optional)" TextColor="Black" Text=""></Entry>
                     <Label HorizontalOptions="Center" FontSize="20" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
                            Text="Add Image(Optional)"  WidthRequest="150"></Label>
                     <BoxView Color="Gray" WidthRequest="100" HeightRequest="100" HorizontalOptions="End"></BoxView>

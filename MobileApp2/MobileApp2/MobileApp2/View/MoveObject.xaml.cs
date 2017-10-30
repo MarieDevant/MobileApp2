@@ -106,6 +106,8 @@ namespace MobileApp2.View
                 {
                     if (item.Name == objectname.Text)
                     {
+                        // check for room first
+                        if ()
                         // add owner to object
                         db.InsertUpdate(new ToDoItem
                         {
