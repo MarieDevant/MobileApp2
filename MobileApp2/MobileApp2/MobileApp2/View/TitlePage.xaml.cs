@@ -83,12 +83,21 @@ namespace MobileApp2.View
             Box b31 = new Box("B1G", r3);
             Item it311 = new Item("Bike", b31);
 
+<<<<<<< HEAD
 
             List<Room> rooms = new List<Room>();
             rooms.Add( r1);
             rooms.Add(r2);
             rooms.Add(r3);
 
+=======
+
+            List<Room> rooms = new List<Room>();
+            rooms.Add( r1);
+            rooms.Add(r2);
+            rooms.Add(r3);
+
+>>>>>>> parent of 9b106ad... none
             */
             // Load lo = new Load(me, vacance, rooms);
 
@@ -116,6 +125,7 @@ namespace MobileApp2.View
             Textlayout.Children.Add(subTitle);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
              StackLayout grid = AddHeader();
              this.Content = grid;
@@ -123,14 +133,19 @@ namespace MobileApp2.View
                Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
             }
 =======
+=======
+>>>>>>> parent of 9b106ad... none
             // StackLayout grid = AddHeader();
             // this.Content = grid;
             //for (int i = 0; i < App.lo.MoveOut.Rooms.Count; i++){
             //   Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
             //}
+<<<<<<< HEAD
 >>>>>>> parent of 9b106ad... none
 
             Textlayout.Children.Add(details);
+=======
+>>>>>>> parent of 9b106ad... none
 
 
         }
