@@ -42,7 +42,7 @@ namespace MobileApp2.View
         }
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-       //     Navigation.PushAsync(new SearchResult());
+      //      Navigation.PushAsync(new SearchResult());
         }
         private void btnHome_Clicked(object sender, EventArgs e)
         {
@@ -97,7 +97,7 @@ namespace MobileApp2.View
                  ObjectType = "Box",
                  Description = Description.Text,
                  Name = Name.Text,
-                 Owner = "Unsorted"
+                 Owner = "unsorted"
              });
             Message.IsVisible = true;
             Message.Text = "Box Added";

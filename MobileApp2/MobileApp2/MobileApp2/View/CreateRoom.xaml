@@ -21,9 +21,11 @@
                                HeightRequest="70" TextColor="Black"></Label>
                         <Entry x:Name="Name" Placeholder="Room Name" Text="" TextColor="Black"></Entry>
                         <Label Text="Add Box (Optional)" FontSize="20" TextColor="Black" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"></Label>
-                        <Entry Placeholder="Box Name" Text="" FontSize="20" HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Start" WidthRequest="250"></Entry>
-                        <Button Text="+" BackgroundColor="Lavender" TextColor="Black" FontSize="20"></Button>
+                        <Entry x:Name="BoxName" Placeholder="Box Name" Text="" FontSize="20" HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Start" WidthRequest="250"></Entry>
+                        <Button Clicked="AddBoxButton" Text="+" BackgroundColor="Lavender" TextColor="Black" FontSize="20"></Button>
+                        <Label x:Name="BoxAdded" Text="Box Added" IsVisible="False"></Label>
                         <Button Clicked="AddRoomButton" Text="Add Room" BackgroundColor="RoyalBlue" TextColor="White"></Button>
+                        
                         <Label x:Name="Message" Text="Invalid options" TextColor="Red" IsVisible="False"></Label>
                     </StackLayout>
 
