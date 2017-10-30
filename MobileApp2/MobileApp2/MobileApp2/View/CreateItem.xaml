@@ -20,6 +20,7 @@
                     <Label HorizontalOptions="Center" Font="20" TextColor="Black" HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center" Text="Add Image(Optional)" WidthRequest="150"></Label>
                     <BoxView Color="Gray" WidthRequest="100" HeightRequest="100" HorizontalOptions="End"></BoxView>
+                    <Entry  x:Name="BoxName" Placeholder ="Box Name" TextColor="Black" Text=""></Entry>
                     <Entry Placeholder="Add Item to Box" FontSize="20" TextColor="Black" HorizontalTextAlignment="Start" WidthRequest="250"></Entry>
                     <Button Text="+" BackgroundColor="Lavender" TextColor="Black" FontSize="20"></Button>
                     <Button Clicked="AddItemButton" Text="Add Item" BackgroundColor="RoyalBlue" TextColor="White"></Button>
