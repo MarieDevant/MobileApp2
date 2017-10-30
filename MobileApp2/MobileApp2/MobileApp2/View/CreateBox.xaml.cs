@@ -84,6 +84,7 @@ namespace MobileApp2.View
         private void Test(object sender, EventArgs e)
         {
              MyDatabase db = new MyDatabase();
+            List<ToDoItem> items = db.GetAllItems();
              if (Description.Text == "" || Name.Text == "")
              {
                 Message.IsVisible = true;
@@ -91,17 +92,36 @@ namespace MobileApp2.View
                 Message.TextColor = Color.Red;
                  return;
              }
-             // insert data check here
-             db.Insert(new ToDoItem()
-             {
-                 ObjectType = "Box",
-                 Description = Description.Text,
-                 Name = Name.Text,
-                 Owner = "unsorted"
-             });
-            Message.IsVisible = true;
-            Message.Text = "Box Added";
-            Message.TextColor = Color.Green;
+            // insert data check here
+            bool stop = true;
+            int count = 0;
+            while(stop){
+                if(count == items.Count)
+                {
+                    stop = false;
+                }
+                count++;
+            }
+            if (count == items.Count)
+            {
+                Message.IsVisible = true;
+                Message.Text = "Error Room doesn't exist";
+                Message.TextColor = Color.Red;
+                return;
+            }
+            else
+            {
+                db.Insert(new ToDoItem()
+                {
+                    ObjectType = "Box",
+                    Description = Description.Text,
+                    Name = Name.Text,
+                    Owner = RoomName.Text
+                });
+                Message.IsVisible = true;
+                Message.Text = "Box Added";
+                Message.TextColor = Color.Green;
+            }
         }
     }
 }

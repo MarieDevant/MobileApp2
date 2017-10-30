@@ -15,9 +15,8 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     <Label Text=" "></Label>
                     <Label Text=" "></Label>
                 </StackLayout>
-
-
-      
+                <Entry x:Name="SearchString" ></Entry>
+                <Button x:Name="searchButton" Clicked="buttonSearchClicked"></Button>      
                     
                 <SearchBar x:Name="mySearchBar"
                  AbsoluteLayout.LayoutBounds="150,1,100,50"

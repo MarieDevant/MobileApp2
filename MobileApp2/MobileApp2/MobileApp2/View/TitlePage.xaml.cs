@@ -52,14 +52,35 @@ namespace MobileApp2.View
         {
            // Navigation.PushAsync(new SearchResult());
         }
-
+		private void buttonSearchClicked(object sender, EventArgs e)
+		{
+            Navigation.PushAsync(new DisplaySearchResult(SearchString.Text));
+		}
 
 
         public TitlePage()
         {
             MyDatabase db = new MyDatabase();
             List<ToDoItem> items = db.GetAllItems();
+            int newlist = 0 ;
+            foreach(ToDoItem i in items)
+            {
+                if (i.ObjectType == "Room" && i.Name == "unsorted")
+                {
+                    newlist ++;
+                }
+            }
 
+            if (newlist == 0)
+            {
+                // add unsorted room in for boxes
+                db.Insert(new ToDoItem()
+                {
+                    ObjectType = "Room",
+                    Name = "unsorted",
+                    Owner = "none"
+                });
+            }
 
             InitializeComponent();
 
@@ -274,7 +295,6 @@ namespace MobileApp2.View
 			Navigation.PushAsync(new DetailBox(boxF));
             */
 		}
-
         private void mySearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(e.NewTextValue.ToString()))

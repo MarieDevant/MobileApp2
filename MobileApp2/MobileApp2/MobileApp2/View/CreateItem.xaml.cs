@@ -83,7 +83,8 @@ namespace MobileApp2.View
         private void AddItemButton(object sender, EventArgs e)
         {
             MyDatabase db = new MyDatabase();
-            if ( Name.Text == "")
+            List<ToDoItem> items = db.GetAllItems();
+            if (Name.Text == "")
             {
                 Message.IsVisible = true;
                 Message.Text = "Error Invalid Input";
@@ -91,15 +92,35 @@ namespace MobileApp2.View
                 return;
             }
             // insert data check here
-            db.Insert(new ToDoItem()
+            bool stop = true;
+            int count = 0;
+            while (stop)
             {
-                ObjectType = "Item",
-                Name = Name.Text,
-                Owner = "Unsorted"
-            });
-            Message.IsVisible = true;
-            Message.Text = "Box Added";
-            Message.TextColor = Color.Green;
+                if (count == items.Count)
+                {
+                    stop = false;
+                }
+                count++;
+            }
+            if (count == items.Count)
+            {
+                Message.IsVisible = true;
+                Message.Text = "Error Box doesn't exist";
+                Message.TextColor = Color.Red;
+                return;
+            }
+            else
+            {
+                db.Insert(new ToDoItem()
+                {
+                    ObjectType = "Item",
+                    Name = Name.Text,
+                    Owner = BoxName1.Text
+                });
+                Message.IsVisible = true;
+                Message.Text = "Item Added";
+                Message.TextColor = Color.Green;
+            }
         }
     }
 }

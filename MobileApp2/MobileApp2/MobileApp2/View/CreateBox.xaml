@@ -24,6 +24,7 @@
                     <Label HorizontalOptions="Center" FontSize="20" WidthRequest="150" TextColor="Black" HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center" Text="QR Code"></Label>
                     <BoxView Color="Gray" WidthRequest="50" HeightRequest="50" HorizontalOptions="End"></BoxView>
+                    <Entry  x:Name="RoomName" Placeholder ="Room Name" TextColor="Black" Text=""></Entry>
                     <Entry HorizontalOptions="Center" FontSize="20" TextColor="Black" HorizontalTextAlignment="Start" WidthRequest="250" Text="Add an Item (Optional)"></Entry>
                     <Button Clicked="Test" Text="Add Box" BackgroundColor="RoyalBlue" TextColor="White"></Button>
                     <Label x:Name="Message" Text="Invalid options" TextColor="Red" IsVisible="False"></Label>

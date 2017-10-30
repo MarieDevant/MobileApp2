@@ -5,10 +5,10 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace MobileApp2.UITest
+namespace UITest1
 {
     [TestFixture(Platform.Android)]
-
+    [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;
@@ -29,13 +29,6 @@ namespace MobileApp2.UITest
         public void AppLaunches()
         {
             app.Screenshot("First screen.");
-        }
-
-        [Test]
-        public void NewTest()
-        {
-            app.Tap(x => x.Text("Menu"));
-            app.Tap(x => x.Text("Create a Room"));
         }
     }
 }
