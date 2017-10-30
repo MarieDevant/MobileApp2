@@ -1,4 +1,4 @@
-﻿﻿﻿using MobileApp2.Model;
+﻿﻿using MobileApp2.Model;
 using MobileApp2.ModelView;
 using System;
 using System.Collections.Generic;
@@ -78,12 +78,13 @@ namespace MobileApp2.View
                 TextColor = Color.Black,
             };
 
-            StackLayout details = getDetails(items);
-
             // add the title
             Textlayout.Children.Add(header);
             Textlayout.Children.Add(subTitle);
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of cf72344... Merge branch 'testPath' of https://github.com/MarieDevant/MobileApp2 into testPath
 
              StackLayout grid = AddHeader();
              this.Content = grid;
@@ -91,8 +92,11 @@ namespace MobileApp2.View
                Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
             }
 
+<<<<<<< HEAD
             Textlayout.Children.Add(details);
 
+=======
+>>>>>>> parent of cf72344... Merge branch 'testPath' of https://github.com/MarieDevant/MobileApp2 into testPath
 
         }
 
@@ -126,6 +130,7 @@ namespace MobileApp2.View
             }
         }
 
+<<<<<<< HEAD
         private StackLayout getDetails(List<ToDoItem> list){
 			StackLayout grid = new StackLayout
 			{
@@ -192,6 +197,8 @@ namespace MobileApp2.View
             }
             return grid;
         }
+=======
+>>>>>>> parent of cf72344... Merge branch 'testPath' of https://github.com/MarieDevant/MobileApp2 into testPath
 
         private StackLayout AddRoom(Room r)
         {

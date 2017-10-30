@@ -1,5 +1,4 @@
 ﻿using MobileApp2.Model;
-using MobileApp2.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +13,8 @@ namespace MobileApp2.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailBox : ContentPage
 	{
-        private ToDoItem b;
-		public DetailBox (ToDoItem box)
+        private Box b;
+		public DetailBox (Box box)
 		{
             b = box;
         	InitializeComponent ();
@@ -37,7 +36,7 @@ namespace MobileApp2.View
           
             Image im = new Image
             {
-                Source = b.Picture,
+                Source = b.Image,
                 WidthRequest = 500,
 
             };
