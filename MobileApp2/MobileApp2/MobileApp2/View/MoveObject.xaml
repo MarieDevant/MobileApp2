@@ -44,6 +44,7 @@
                 WidthRequest = "200"
                 TextColor = "Black"/>
             <Button
+                Clicked="ConfirmButton"
                 Text = "Move"
                 TranslationY = "50"
                 VerticalOptions = "End"

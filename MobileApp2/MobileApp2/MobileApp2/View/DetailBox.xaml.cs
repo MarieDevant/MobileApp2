@@ -83,7 +83,7 @@ namespace MobileApp2.View
 			MyDatabase db = new MyDatabase();
 			List<ToDoItem> items = db.GetAllItems();
             foreach(ToDoItem it in items){
-                if(it.ObjectType.ToLower() == "item" && it.Owner == b.Id){
+                if(it.ObjectType.ToLower() == "item" && it.Owner == b.Name){
 					Label item = new Label
 					{
 						Text = it.Name,
@@ -208,7 +208,7 @@ namespace MobileApp2.View
         }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SearchResult());
+           // Navigation.PushAsync(new SearchResult());
         }
         private void btnHome_Clicked(object sender, EventArgs e)
         {

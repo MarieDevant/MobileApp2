@@ -13,7 +13,7 @@ namespace MobileApp2.View
             InitializeComponent();
 
 
-         }
+        }
 
 
         private bool MainMenuOn = false;
@@ -43,7 +43,7 @@ namespace MobileApp2.View
         }
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-           // Navigation.PushAsync(new SearchResult());
+            // Navigation.PushAsync(new SearchResult());
         }
         private void btnHome_Clicked(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace MobileApp2.View
         private void AddRoomButton(object sender, EventArgs e)
         {
             MyDatabase db = new MyDatabase();
-            if ( Name.Text == "")
+            if (Name.Text == "")
             {
                 Message.IsVisible = true;
                 Message.Text = "Error Invalid Input";
@@ -98,8 +98,37 @@ namespace MobileApp2.View
                 Owner = "none"
             });
             Message.IsVisible = true;
-            Message.Text = "Box Added";
+            Message.Text = "Room Added";
             Message.TextColor = Color.Green;
+        }
+
+        private void AddBoxButton(object sender, EventArgs e)
+        {
+            MyDatabase db = new MyDatabase();
+            List<ToDoItem> items = db.GetAllItems();
+
+            foreach(ToDoItem item in items)
+            {
+                if (item.ObjectType == "Box")
+                {
+                    if (item.Name == BoxName.Text)
+                    {
+                        BoxAdded.IsVisible = true;
+                        db.InsertUpdate(new ToDoItem
+                        {
+                            Id = item.Id,
+                            Name = item.Name,
+                            Description = item.Description,
+                            ObjectType = item.ObjectType,
+                            Owner = Name.Text,                           
+                        });
+                        BoxAdded.Text = "Box added";
+                        return;
+                    }
+                }
+            }
+            BoxAdded.IsVisible = true;
+            BoxAdded.Text = "No Box Found";
         }
     }
 }
