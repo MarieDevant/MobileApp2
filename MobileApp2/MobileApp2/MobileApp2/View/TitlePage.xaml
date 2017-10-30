@@ -10,7 +10,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         <ScrollView>
                 <AbsoluteLayout>
 
-                <StackLayout x:Name ="SearchBarBase" >
+                <StackLayout x:Name ="SearchBarBase">
                 <Entry x:Name="SearchString" WidthRequest = "250"></Entry>
                 <Button x:Name="searchButton" Clicked="buttonSearchClicked"></Button>    
                 </StackLayout>

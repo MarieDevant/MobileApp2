@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C8BF65B6-6C94-43E9-B644-EE0CEF082FB4}</ProjectGuid>
+    <ProjectGuid>{2229A066-C981-4891-837F-168CC6A2FCBB}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>UITest1</RootNamespace>
-    <AssemblyName>UITest1</AssemblyName>
+    <RootNamespace>MobileApp2.UITest1</RootNamespace>
+    <AssemblyName>MobileApp2.UITest1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

@@ -100,7 +100,7 @@ namespace MobileApp2.View
             {
 				if (items[count].ObjectType.ToLower() == "box" && items[count].Name.ToLower() == BoxName.Text.ToLower())
 				{
-					stope = false;
+					stop = false;
 				}
                 if (count == items.Count)
                 {
