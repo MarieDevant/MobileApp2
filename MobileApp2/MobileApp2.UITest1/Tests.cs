@@ -65,6 +65,76 @@ namespace MobileApp2.UITest1
             app.Tap(x => x.Text("Menu"));
             app.Tap(x => x.Class("AppCompatButton"));
         }
+
+        [Test]
+        public void TestValidRoom()
+        {
+            app.Tap(x => x.Text("Menu"));
+            app.Tap(x => x.Text("Create a Room"));
+            app.SwipeRightToLeft();
+            app.Tap(x => x.Class("ListView"));
+            app.Tap(x => x.Class("ListView"));
+            app.Tap(x => x.Class("EntryEditText").Index(4));
+            app.EnterText(x => x.Class("EntryEditText").Index(4), "roomk");
+            app.PressEnter();
+            app.Tap(x => x.Text("Add Room"));
+            app.SwipeLeftToRight();
+            app.SwipeLeftToRight();
+            app.Tap(x => x.Class("EntryEditText").Index(4));
+            app.EnterText(x => x.Class("EntryEditText").Index(4), "boxx");
+            app.PressEnter();
+            app.Tap(x => x.Class("EntryEditText").Index(5));
+            app.EnterText(x => x.Class("EntryEditText").Index(5), "etc");
+            app.PressEnter();
+            app.ScrollDown();
+            app.Tap(x => x.Class("EntryEditText").Index(6));
+            app.EnterText(x => x.Class("EntryEditText").Index(6), "roomk");
+            app.PressEnter();
+            app.Tap(x => x.Text("Add Box"));
+        }
+
+        [Test]
+        public void AddingRoomBox()
+        {
+            app.Tap(x => x.Text("Menu"));
+            app.Tap(x => x.Text("Create a Room"));
+            app.SwipeRightToLeft();
+            app.SwipeRightToLeft();
+            app.SwipeRightToLeft();
+            app.Tap(x => x.Class("EntryEditText").Index(4));
+            app.EnterText(x => x.Class("EntryEditText").Index(4), "room one");
+            app.PressEnter();
+            app.ScrollDownTo("Add Room");
+            app.Tap(x => x.Text("Add Room"));
+            app.SwipeLeftToRight();
+            app.SwipeLeftToRight();
+            app.Tap(x => x.Class("EntryEditText").Index(4));
+            app.EnterText(x => x.Class("EntryEditText").Index(4), "box n");
+            app.PressEnter();
+            app.ScrollDownTo("Add Box");
+            app.Tap(x => x.Text("Add Box"));
+            app.Tap(x => x.Class("EntryEditText").Index(6));
+            app.EnterText(x => x.Class("EntryEditText").Index(6), "room one");
+            app.PressEnter();
+            app.Tap(x => x.Text("Add Box"));
+            app.Tap(x => x.Text("Add an Item (Optional)"));
+            app.Tap(x => x.Class("ListView"));
+            app.ScrollUp();
+            app.Tap(x => x.Class("EntryEditText").Index(5));
+            app.EnterText(x => x.Class("EntryEditText").Index(5), "ant");
+            app.PressEnter();
+            app.ScrollDownTo("room one");
+            app.ScrollDownTo("Add Box");
+            app.Tap(x => x.Text("Add Box"));
+            app.Tap(x => x.Text("room one"));
+            app.ClearText(x => x.Class("EntryEditText").Text("room one"));
+            app.EnterText(x => x.Class("EntryEditText").Text("room one"), "room1");
+            app.PressEnter();
+            app.Tap(x => x.Text("Add Box"));
+        }
+
+
+
     }
 }
 
