@@ -105,7 +105,8 @@ namespace MobileApp2.View
             Textlayout.Children.Add(header);
             Textlayout.Children.Add(subTitle);
             Textlayout.Children.Add(details);
-
+            SearchString.IsVisible = true;
+            searchButton.IsVisible = true;
         }
 
 
