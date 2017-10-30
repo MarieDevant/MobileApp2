@@ -50,7 +50,7 @@ namespace MobileApp2.View
         }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SearchResult());
+           // Navigation.PushAsync(new SearchResult());
         }
 
 
@@ -58,7 +58,7 @@ namespace MobileApp2.View
         public TitlePage()
         {
             MyDatabase db = new MyDatabase();
-          List<ToDoItem> items = db.GetAllItems();
+            List<ToDoItem> items = db.GetAllItems();
 
 
             InitializeComponent();
@@ -78,27 +78,16 @@ namespace MobileApp2.View
                 TextColor = Color.Black,
             };
 
+            StackLayout details = getDetails(items);
+
             // add the title
             Textlayout.Children.Add(header);
             Textlayout.Children.Add(subTitle);
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of cf72344... Merge branch 'testPath' of https://github.com/MarieDevant/MobileApp2 into testPath
-
-             StackLayout grid = AddHeader();
-             this.Content = grid;
-            for (int i = 0; i < App.lo.MoveOut.Rooms.Count; i++){
-               Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
-            }
-
-<<<<<<< HEAD
             Textlayout.Children.Add(details);
 
-=======
->>>>>>> parent of cf72344... Merge branch 'testPath' of https://github.com/MarieDevant/MobileApp2 into testPath
-
         }
+
+
 
         // when the main menu button is clicked this action will play
         private void MenuClicked(object sender, EventArgs e)
@@ -130,7 +119,6 @@ namespace MobileApp2.View
             }
         }
 
-<<<<<<< HEAD
         private StackLayout getDetails(List<ToDoItem> list){
 			StackLayout grid = new StackLayout
 			{
@@ -138,67 +126,72 @@ namespace MobileApp2.View
 				TranslationY = 20,
 			};
             foreach(ToDoItem obj in list){
-                if (obj.ObjectType.ToLower() == "room"){
-					Label room = new Label
-					{
-                        Text = obj.Name,
-						HorizontalOptions = LayoutOptions.CenterAndExpand,
-						VerticalOptions = LayoutOptions.Center,
-						FontSize = 20,
-						TextColor = Color.White,
-						HorizontalTextAlignment = TextAlignment.Center,
-						VerticalTextAlignment = TextAlignment.Center,
-						HeightRequest = 40,
-						WidthRequest = 400,
-						BackgroundColor = Color.RoyalBlue,
-					};
-                    grid.Children.Add(room);
-                    foreach(ToDoItem obj2 in list){
-                        if(obj2.ObjectType.ToLower()=="box" && obj2.Owner == obj.Name){
-							Label box = new Label
-							{
-								Text = obj2.Name,
-								HorizontalOptions = LayoutOptions.Center,
-								FontSize = 20,
-								TextColor = Color.Black,
-								HorizontalTextAlignment = TextAlignment.Start,
-								VerticalTextAlignment = TextAlignment.Center,
-								WidthRequest = 300,
-								BackgroundColor = Color.Lavender,
-							};
-							Button plus = new Button
-							{
-								Text = "+",
-								HorizontalOptions = LayoutOptions.End,
-								BackgroundColor = Color.Lavender,
-								TextColor = Color.Black,
-								FontSize = 20,
-								CommandParameter = obj2,
-							};
+                if (obj.ObjectType != null) {
+                    if (obj.ObjectType.ToLower() == "room")
+                    {
+                        Label room = new Label
+                        {
+                            Text = obj.Name,
+                            HorizontalOptions = LayoutOptions.CenterAndExpand,
+                            VerticalOptions = LayoutOptions.Center,
+                            FontSize = 20,
+                            TextColor = Color.White,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            VerticalTextAlignment = TextAlignment.Center,
+                            HeightRequest = 40,
+                            WidthRequest = 400,
+                            BackgroundColor = Color.RoyalBlue,
+                        };
+                        grid.Children.Add(room);
 
-							plus.Clicked += onPlusButtonClicked;
+                        foreach (ToDoItem obj2 in list)
+                        {
+                            if (obj2.ObjectType.ToLower() == "box" && obj2.Owner == obj.Name)
+                            {
+                                Label box = new Label
+                                {
+                                    Text = obj2.Name,
+                                    HorizontalOptions = LayoutOptions.Center,
+                                    FontSize = 20,
+                                    TextColor = Color.Black,
+                                    HorizontalTextAlignment = TextAlignment.Start,
+                                    VerticalTextAlignment = TextAlignment.Center,
+                                    WidthRequest = 300,
+                                    BackgroundColor = Color.Lavender,
+                                };
+                                Button plus = new Button
+                                {
+                                    Text = "+",
+                                    HorizontalOptions = LayoutOptions.End,
+                                    BackgroundColor = Color.Lavender,
+                                    TextColor = Color.Black,
+                                    FontSize = 20,
+                                    CommandParameter = obj2,
+                                };
 
-							StackLayout lign = new StackLayout
-							{
-								Orientation = StackOrientation.Horizontal,
-								TranslationX = 20,
-								HeightRequest = 40,
-								VerticalOptions = LayoutOptions.Center,
-								Children =
-				                    {
-					                    box,
-					                    plus
-				                    }
-							};
-                            grid.Children.Add(lign);
+                                plus.Clicked += onPlusButtonClicked;
+
+                                StackLayout lign = new StackLayout
+                                {
+                                    Orientation = StackOrientation.Horizontal,
+                                    TranslationX = 20,
+                                    HeightRequest = 40,
+                                    VerticalOptions = LayoutOptions.Center,
+                                    Children =
+                                    {
+                                        box,
+                                        plus
+                                    }
+                                };
+                                grid.Children.Add(lign);
+                            }
                         }
                     }
                 }
             }
             return grid;
         }
-=======
->>>>>>> parent of cf72344... Merge branch 'testPath' of https://github.com/MarieDevant/MobileApp2 into testPath
+
 
         private StackLayout AddRoom(Room r)
         {

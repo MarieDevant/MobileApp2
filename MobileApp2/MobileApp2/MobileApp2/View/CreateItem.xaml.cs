@@ -43,7 +43,7 @@ namespace MobileApp2.View
         }
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SearchResult());
+        //    Navigation.PushAsync(new SearchResult());
         }
         private void btnHome_Clicked(object sender, EventArgs e)
         {

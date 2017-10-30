@@ -46,7 +46,7 @@ namespace MobileApp2.View
             string searchedString = "i";
 
             List<Room> foundR; List<Box> foundB; List<Item> foundI;
-            Sortage.FindObject(searchedString, lo,out foundR, out foundB, out foundI);
+           // Sortage.FindObject(searchedString, lo,out foundR, out foundB, out foundI);
 
             InitializeComponent();
 

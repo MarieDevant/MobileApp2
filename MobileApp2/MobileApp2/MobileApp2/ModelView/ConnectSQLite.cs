@@ -18,7 +18,7 @@ namespace MobileApp2.ModelView
 		public static void OpenCo()
 		{
             my_co = new SQLiteConnection(DependencyService.Get<ISQLitePlatform>(),
-                DependencyService.Get<IFileHelper>().GetLocalpath("TestDatabase.s3db"));
+                DependencyService.Get<IFileHelper>().GetLocalpath("MyDatabase.s3db"));
 			my_co.
 		}
 		public static void CloseCo()

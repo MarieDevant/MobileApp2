@@ -15,7 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFileHelper.cs" />
     <None Include="$(MSBuildThisFileDirectory)ModelView\ConnectSQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\MyDatabase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
+    <None Include="$(MSBuildThisFileDirectory)ModelView\Sortage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\ToDoItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\DetailBox.xaml.cs">
       <DependentUpon>DetailBox.xaml</DependentUpon>
@@ -44,10 +44,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)View\MoveObject.xaml.cs">
       <DependentUpon>MoveObject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\SearchResult.xaml.cs">
-      <DependentUpon>SearchResult.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\Box.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Item.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Load.cs" />
@@ -75,10 +71,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\MoveObject.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\SearchResult.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)TestDatabase.json">
