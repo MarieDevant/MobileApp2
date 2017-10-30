@@ -83,6 +83,7 @@ namespace MobileApp2.View
         private void AddItemButton(object sender, EventArgs e)
         {
             MyDatabase db = new MyDatabase();
+            List<ToDoItem> items = db.GetAllItems();
             if (Name.Text == "")
             {
                 Message.IsVisible = true;
@@ -95,13 +96,13 @@ namespace MobileApp2.View
             int count = 0;
             while (stop)
             {
-                if (items[count].ObjectType.ToLower() == "box" && items[count].Name.ToLower() == BoxName.Text.ToLower())
+                if (count == items.Count)
                 {
                     stop = false;
                 }
                 count++;
             }
-            if (count == items.Length)
+            if (count == items.Count)
             {
                 Message.IsVisible = true;
                 Message.Text = "Error Box doesn't exist";
@@ -114,7 +115,7 @@ namespace MobileApp2.View
                 {
                     ObjectType = "Item",
                     Name = Name.Text,
-                    Owner = BoxName.Text
+                    Owner = BoxName1.Text
                 });
                 Message.IsVisible = true;
                 Message.Text = "Item Added";
