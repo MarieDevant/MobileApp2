@@ -20,7 +20,7 @@ namespace MobileApp2.ModelView
             List<ToDoItem> found = new List<ToDoItem>();
 
             foreach(ToDoItem obj in list){
-                if (obj.Name.Contain(toFind)){
+                if (obj.Name.Contains(toFind)){
                     found.Add(obj);
                 }
             }

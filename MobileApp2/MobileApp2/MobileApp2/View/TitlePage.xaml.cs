@@ -83,7 +83,7 @@ namespace MobileApp2.View
             // add the title
             Textlayout.Children.Add(header);
             Textlayout.Children.Add(subTitle);
-<<<<<<< HEAD
+
 
              StackLayout grid = AddHeader();
              this.Content = grid;
@@ -91,9 +91,8 @@ namespace MobileApp2.View
                Textlayout.Children.Add(AddRoom(App.lo.MoveOut.Rooms[i]));
             }
 
-=======
             Textlayout.Children.Add(details);
->>>>>>> bc2861254c504573481dc13778825544cee43f80
+
 
         }
 
@@ -150,7 +149,7 @@ namespace MobileApp2.View
 					};
                     grid.Children.Add(room);
                     foreach(ToDoItem obj2 in list){
-                        if(obj2.ObjectType.ToLower()=="box" && obj2.Owner == obj.Id){
+                        if(obj2.ObjectType.ToLower()=="box" && obj2.Owner == obj.Name){
 							Label box = new Label
 							{
 								Text = obj2.Name,
