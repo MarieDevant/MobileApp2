@@ -52,7 +52,10 @@ namespace MobileApp2.View
         {
            // Navigation.PushAsync(new SearchResult());
         }
-
+		private void buttonSearchClicked(object sender, EventArgs e)
+		{
+            Navigation.PushAsync(new DisplaySearchResult(SearchString.Text));
+		}
 
 
         public TitlePage()
@@ -292,7 +295,6 @@ namespace MobileApp2.View
 			Navigation.PushAsync(new DetailBox(boxF));
             */
 		}
-
         private void mySearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(e.NewTextValue.ToString()))
