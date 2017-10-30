@@ -5,10 +5,10 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace MobileApp2.UITest
+namespace UITest1
 {
     [TestFixture(Platform.Android)]
-
+    [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;

@@ -4,7 +4,7 @@ using System.Linq;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace MobileApp2.UITest
+namespace UITest1
 {
     public class AppInitializer
     {
