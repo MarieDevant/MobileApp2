@@ -117,7 +117,7 @@ namespace MobileApp2.View
                     Owner = BoxName.Text
                 });
                 Message.IsVisible = true;
-                Message.Text = "Box Added";
+                Message.Text = "Item Added";
                 Message.TextColor = Color.Green;
             }
         }
