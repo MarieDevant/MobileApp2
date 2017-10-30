@@ -269,9 +269,10 @@ namespace MobileApp2.View
         }
 		private void onPlusButtonClicked(object sender, EventArgs e)
 		{
-			Button btn = (Button)sender;
+		/*	Button btn = (Button)sender;
 			Box boxF = (Box)btn.CommandParameter;
 			Navigation.PushAsync(new DetailBox(boxF));
+            */
 		}
 
         private void mySearchBar_TextChanged(object sender, TextChangedEventArgs e)
