@@ -85,7 +85,7 @@ namespace MobileApp2.View
         {
              MyDatabase db = new MyDatabase();
             List<ToDoItem> items = db.GetAllItems();
-             if (Description.Text == "" || Name.Text == "")
+            if (Description.Text == "" || Name.Text == "" || RoomName.Text =="")
              {
                 Message.IsVisible = true;
                 Message.Text = "Error Invalid Input";
