@@ -7,6 +7,7 @@ namespace MobileApp2.Model
 {
     public class Box
     {
+        public int id { get; set; }
         private string name;
 
         private string image;
@@ -15,40 +16,40 @@ namespace MobileApp2.Model
 
         private string description;
 
-
+        public Room fatherRoom{ get; set; }
         private List<Item> items;
 
 
 
-        public Box(string n, string pathImage, string descr, string pathQRCode)
+        public Box(int i,string n, string pathImage, string descr, string pathQRCode, Room father)
 
         {
-
+            id = i;
             name = n;
-
+            fatherRoom = father;
             image = pathImage;
             description = descr;
             qrcode = pathQRCode;
             items = new List<Item>();
         }
 
-        public Box(string n)
+        public Box(int i, string n, Room father)
         {
-
+            id = i;
             name = n;
+			fatherRoom = father;
 
-            image = "none";
-
+			image = "none";
             qrcode = "none";
             description = "none";
             items = new List<Item>();
 
         }
 
-		[JsonConstructor] public Box(string n, List<Item> l)
+		[JsonConstructor] public Box(int i,string n, List<Item> l)
 		{
-
-			name = n;
+            id = i;
+            name = n;
 
 			image = "none";
 

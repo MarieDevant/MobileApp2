@@ -7,30 +7,34 @@ namespace MobileApp2.Model
 {
     public class Room
     {
-
+        public int id { get; set; }
         private string name;
 
         private ConsoleColor color;
 
         private List<Box> boxes;
 
-        public Room(string n, ConsoleColor c)
+        public MoveOut fatherMoveOut{ get; set; }
+
+        public Room(int i, string n, ConsoleColor c, MoveOut father)
 
         {
+            id = i;
 
             name = n;
-
+            fatherMoveOut = father;
             color = c;
 
             boxes = new List<Box>();
 
         }
-		[JsonConstructor] public Room(string n, ConsoleColor c, List<Box> l)
+		[JsonConstructor] public Room(int i, string n, ConsoleColor c, List<Box> l, MoveOut father)
 
 		{
+            id = i;
 
-			name = n;
-
+            name = n;
+			fatherMoveOut = father;
 			color = c;
 
 			boxes = l;

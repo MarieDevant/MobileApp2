@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="MobileApp2.View.CreateItem"
-    BackgroundColor = "Lavender">
-	<ContentPage.Content>
-
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   x:Class="MobileApp2.View.DisplaySearchResult"
+    Title="Label Demo"
+    BackgroundColor="Lavender">
+    <ContentPage.Content>
 
 
         <ScrollView>
-            <AbsoluteLayout>
-                <!-- static objects on page-->
+                <AbsoluteLayout>
+    
                 <StackLayout x:Name="Textlayout">
                     <Label Text=" "></Label>
                     <Label Text=" "></Label>
                     <Label Text=" "></Label>
-                    <Label Text="Create a item" HorizontalOptions="Center" VerticalOptions="Center"
-                           Font="30" VerticalTextAlignment="Start" HeightRequest="70" TextColor="Black"></Label>
-                    <Entry x:Name="Name" Placeholder="Item Name" Text="" TextColor="Black"></Entry>
-                    <Label HorizontalOptions="Center" Font="20" TextColor="Black" HorizontalTextAlignment="Start"
-                           VerticalTextAlignment="Center" Text="Add Image(Optional)" WidthRequest="150"></Label>
-                    <BoxView Color="Gray" WidthRequest="100" HeightRequest="100" HorizontalOptions="End"></BoxView>
-                    <Entry Placeholder="Add Item to Box" FontSize="20" TextColor="Black" HorizontalTextAlignment="Start" WidthRequest="250"></Entry>
-                    <Button Text="+" BackgroundColor="Lavender" TextColor="Black" FontSize="20"></Button>
-                    <Button Clicked="AddItemButton" Text="Add Item" BackgroundColor="RoyalBlue" TextColor="White"></Button>
-                    <Label x:Name="Message" Text="Invalid options" TextColor="Red" IsVisible="False"></Label>
                 </StackLayout>
+
+
+      
+                    
+                <SearchBar x:Name="mySearchBar"
+                 AbsoluteLayout.LayoutBounds="150,1,100,50"
+                   TextChanged="mySearchBar_TextChanged"
+                   SearchButtonPressed="mySearchBar_ButtonPressed"
+                   />
+                <ListView x:Name="myListView"/>
 
                 <!-- Start of the navigation menu-->
                 <Image Style="{StaticResource TopBorder}"/>
                 <Image Style="{StaticResource SideBorder}" x:Name ="Border"/>
 
                 <!-- buttons in navigation menu-->
-                <Button Style="{StaticResource HomeButton}" Clicked="btnHome_Clicked" x:Name="Button0"  />
+                <Button Style="{StaticResource HomeButton}"  x:Name="Button0"  />
                 <Button Style="{StaticResource CreateRoomButton}" x:Name="Button1" Clicked="btnAddRoom_Clicked" />
                 <Button Style="{StaticResource CreateBoxButton}" x:Name="Button2" Clicked="btnCreateBox_Clicked" />
                 <Button Style="{StaticResource CreateItemButton}" x:Name="Button3" Clicked="btnCreateItem_Clicked" />

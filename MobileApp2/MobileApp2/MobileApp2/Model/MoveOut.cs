@@ -7,23 +7,23 @@ namespace MobileApp2.Model
 {
     public class MoveOut
     {
-
+        private int id { get; set; }
         private string name;
         private List<Room> rooms;
 
 
-        public MoveOut(string name)
+        public MoveOut(int i,string name)
 
         {
-
+            id = i;
             this.name = name;
             rooms = new List<Room>();
         }
-		[JsonConstructor] public MoveOut(string name, List<Room> rooms)
+		[JsonConstructor] public MoveOut(int i,string name, List<Room> rooms)
 
 		{
-
-			this.name = name;
+            id = i;
+            this.name = name;
             this.rooms = rooms;
 		}
 

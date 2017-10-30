@@ -1,4 +1,5 @@
 ﻿using MobileApp2.Model;
+using MobileApp2.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,8 @@ namespace MobileApp2.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetailBox : ContentPage
 	{
-        private Box b;
-		public DetailBox (Box box)
+        private ToDoItem b;
+		public DetailBox (ToDoItem box)
 		{
             b = box;
         	InitializeComponent ();
@@ -36,7 +37,7 @@ namespace MobileApp2.View
           
             Image im = new Image
             {
-                Source = b.Image,
+                Source = b.Picture,
                 WidthRequest = 500,
 
             };
@@ -78,10 +79,49 @@ namespace MobileApp2.View
                 FontSize = 15,
                 TextColor = Color.Black
             };
-            StackLayout items = new StackLayout { };
-            for (int i = 0; i < b.Items.Count;i++){
-                items.Children.Add(AddItem(b.Items[i]));
+            StackLayout cont = new StackLayout { };
+			MyDatabase db = new MyDatabase();
+			List<ToDoItem> items = db.GetAllItems();
+            foreach(ToDoItem it in items){
+                if(it.ObjectType.ToLower() == "item" && it.Owner == b.Name){
+					Label item = new Label
+					{
+						Text = it.Name,
+						HorizontalOptions = LayoutOptions.Center,
+						FontSize = 15,
+						TextColor = Color.Black,
+						HorizontalTextAlignment = TextAlignment.Start,
+						VerticalTextAlignment = TextAlignment.Center,
+						WidthRequest = 250,
+						BackgroundColor = Color.Lavender,
+					};
+					Label image = new Label
+					{
+						Text = "Picture",
+						HorizontalOptions = LayoutOptions.End,
+						BackgroundColor = Color.Lavender,
+						HorizontalTextAlignment = TextAlignment.Start,
+						VerticalTextAlignment = TextAlignment.Center,
+						TextColor = Color.Black,
+						FontSize = 15,
+
+					};
+					StackLayout lign = new StackLayout
+					{
+						Orientation = StackOrientation.Horizontal,
+						TranslationX = 20,
+						VerticalOptions = LayoutOptions.Center,
+						Children =
+				            {
+				            	item,
+				            	image
+				            }
+					};
+                    cont.Children.Add(lign);
+                }
             }
+
+
             StackLayout grid = new StackLayout
             {
                 TranslationY = 70,
@@ -92,7 +132,7 @@ namespace MobileApp2.View
                     //im,
                     desc,
                     content,
-                    items
+                    cont
                 }
             };
             return grid;
@@ -168,7 +208,7 @@ namespace MobileApp2.View
         }*/
         private void btnSearch_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SearchResult());
+           // Navigation.PushAsync(new SearchResult());
         }
         private void btnHome_Clicked(object sender, EventArgs e)
         {

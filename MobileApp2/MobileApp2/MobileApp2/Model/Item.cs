@@ -7,34 +7,31 @@ namespace MobileApp2.Model
 {
     public class Item
     {
-
+        public int id { get; set; }
         private string name;
-
+        public Box fatherBox { get; set; }
         private string image;
 
         private string description;
 
-
-
-
-        [JsonConstructor] public Item(string n, string pathImage, string desc)
+        [JsonConstructor] public Item(int i,string n, string pathImage, string desc, Box b)
 
         {
-
+            id = i;
             name = n;
-
+            fatherBox = b;
             image = pathImage;
 
             description = desc;
 
         }
 
-         public Item(string n)
+         public Item(int i,string n, Box b)
         {
-
+            id = i;
             name = n;
-
-            image = "none";
+			fatherBox = b;
+			image = "none";
 
             description = "none";
 

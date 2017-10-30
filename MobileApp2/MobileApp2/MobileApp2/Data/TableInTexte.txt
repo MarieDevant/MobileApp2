@@ -1,0 +1,4 @@
+INSERT INTO MoveOut(id,name) VALUES(0,"hollidays");
+INSERT INTO Room(id,name,Color,fatherMoveOut) VALUES  (2,"Garage","Blue",0);(0,"Living Room", "Red",0);(1,"Kitchen","Green",0)
+INSERT INTO Box(id, name,fatherRoom,fatherMoveOut) VALUES (5,"B1G",2,0)(0,"B1LR",0,0)(1,"B2LR",0,0)(3, "B1K",1,0)(4,"B2K",1,0)
+INSERT INTO Item(id,name,fatherBox,fatherRoom,fatherMoveOut) VALUES (0,"Lamp",0,0,0)(1,"Pillow",0,0,0)(2,"Blap",1,0,0)(3,"Plates",0,1,0)(4,"Forks x24",0,1,0)(5,"Glasses",1,1,0)(6,"Bike",0,2,0)
